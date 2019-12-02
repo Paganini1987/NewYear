@@ -22,41 +22,101 @@ body
 	position: relative
 	line-height: 1.65
 	font-family: 'Roboto', sans-serif
-	overflow-x: hidden
 	color: $text
+	background-color: #211e77
 
-// Custom Sass / Remove before use
+html, body
+	height: 100%
 
-.container
-	max-width: 700px
-	padding:
-		right: $gutter/2
-		left: $gutter/2
-	margin:
-		left: auto
-		right: auto
-
-.img-responsive
-	display: block
-	max-width: 100%
-	height: auto
-
-.example-grid
-	display: grid
-	grid-gap: $gutter
-	grid-template-columns: 1fr 1fr
-	grid-template-areas: "left right"
-	> div:first-child
-		grid-area: left
-	> div:last-child
-		grid-area: right
-	+media-breakpoint-down(xs)
-		display: block
-		> div
-			padding: $gutter/2 0
-	
-.example-img
+.slides
 	width: 100%
+	height: 100%
+	list-style: none
+	padding: 0
+	margin: 0
 
-.parent // Lazy Load Placeholder Generator: https://webdesign-master.ru/services/lazy/
-	background-image: url(data:image/gif;base64,R0lGODlhCgAIAIABAN3d3f///yH5BAEAAAEALAAAAAAKAAgAAAINjAOnyJv2oJOrVXrzKQA7)
+.slide
+	display: none
+	position: relative
+	overflow: hidden
+	width: 100%
+	height: 100%
+	min-height: 900px
+	background-image: url('/img/@2x/gradient.jpg')
+	background-repeat: no-repeat
+	background-position: 50%
+	background-size: cover
+	&.active
+		display: block
+
+
+.grid
+	position: relative
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%)
+	min-width: 4096px
+	min-height: 3072px
+	width: 100%
+	height: 100%
+	svg
+		display: block
+		path
+			stroke-width: 1px
+
+.title
+	display: block
+	position: absolute
+	top: 38.8%
+	left: 34%
+	width: 570px
+
+.cube-holo
+	display: block
+	position: absolute
+	top: 45.5%
+	left: 36%
+	width: 500px
+
+.cube-holo-1
+	display: block
+	position: absolute
+	top: 35.5%
+	left: 63%
+	width: 263px
+
+.button
+	display: block
+	position: absolute
+	top: 54.5%
+	left: 57.7%
+	width: 300px
+	height: 300px
+	border-radius: 50%
+	background-color: #FC3F27
+	svg
+		display: block
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		margin: auto
+
+
+
+@media only screen and (max-width : 1599px)
+	.wrap
+		min-height: 900px
+
+	.grid
+		min-width: 0
+		min-height: 0
+		width: 100%
+		height: 100%
+
+	.title
+		top: 6vw
+		left: 16.5%
+		width: 36%
+		height: auto
