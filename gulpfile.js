@@ -85,10 +85,10 @@ gulp.task('img-responsive-1x', async function() {
 gulp.task('img-responsive-2x', async function() {
 	return gulp.src('app/img/_src/**/*.{png,jpg,jpeg,webp,raw}')
 		.pipe(newer('app/img/@2x'))
-		.pipe(responsive({
-			'**/*': { width: '100%', quality: quality }
-		})).on('error', function (e) { console.log(e) })
-		.pipe(rename(function (path) {path.extname = path.extname.replace('jpeg', 'jpg')}))
+		// .pipe(responsive({
+		// 	'**/*': { width: '100%', quality: quality }
+		// })).on('error', function (e) { console.log(e) })
+		// .pipe(rename(function (path) {path.extname = path.extname.replace('jpeg', 'jpg')}))
 		.pipe(gulp.dest('app/img/@2x'))
 });
 gulp.task('img', gulp.series('img-responsive-1x', 'img-responsive-2x', bsReload));

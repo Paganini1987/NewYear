@@ -48,18 +48,58 @@ html, body
 	background-size: cover
 	&.active
 		display: block
+	&__logo
+		display: block
+		position: absolute
+		top: 80%
+		left: 1%
+		z-index: 10
 
+.top-line
+	position: absolute
+	width: 23%
+	top: 36.5%
+	left: 34.5%
+	display: flex
+	align-items: center
+	justify-content: space-between
+	font-family: Fugue
+	font-size: 14px
+	color: #fff
+	z-index: 10
+	&__title
+		font-size: inherit
+		width: 160px
+		color: inherit
+		margin-bottom: 0
+		font-weight: 400
+		line-height: 1.2
+	&__menu
+		list-style: none
+		padding: 0
+		margin: 0
+		display: flex
+		align-items: center
+	&__link
+		&:not(:last-of-type)
+			margin-right: 132px
+		a
+			color: #fff!important
+			text-decoration: none!important
+			outline: none!important
 
 .grid
 	position: relative
 	top: 50%
 	left: 50%
 	transform: translate(-50%, -50%)
-	min-width: 4096px
-	min-height: 3072px
+	// min-width: 4096px
+	// min-height: 3072px
+	min-width: 4400px
+	min-height: 3100px
 	width: 100%
 	height: 100%
-	svg
+	&__svg
 		display: block
 		path
 			stroke-width: 1px
@@ -67,34 +107,74 @@ html, body
 .title
 	display: block
 	position: absolute
-	top: 38.8%
-	left: 34%
-	width: 570px
+	top: 38.5%
+	left: 36.2%
+	width: 594px
 
-.cube-holo
+
+.cube
 	display: block
 	position: absolute
-	top: 45.5%
-	left: 36%
-	width: 500px
+	&--1
+		top: 45.5%
+		left: 38.5%
+		width: 500px
+	&--2
+		top: 35.5%
+		left: 62%
+		width: 263px
 
-.cube-holo-1
+.star
 	display: block
 	position: absolute
-	top: 35.5%
-	left: 63%
-	width: 263px
+	&--1
+		width: 200px
+		top: 48.5%
+		left: 34%
+	&--2
+		width: 100px
+		top: 58%
+		left: 52.2%
+	&--3
+		width: 100px
+		top: 38.8%
+		left: 59%
+
+.ellips
+	display: block
+	position: absolute
+	width: 357px
+	top: 37.5%
+	left: 51.5%
+
+.text
+	position: absolute
+	width: 526px
+	top: 46%
+	left: 50.7%
+	font-family: Formular
+	color: #fff
+	font-size: 33px
+	line-height: 38px
 
 .button
 	display: block
 	position: absolute
-	top: 54.5%
-	left: 57.7%
+	top: 54.4%
+	left: 56.1%
 	width: 300px
-	height: 300px
 	border-radius: 50%
 	background-color: #FC3F27
-	svg
+	outline: none!important
+	&::before
+		content: ''
+		display: block
+		position: relative
+		padding-top: 100%
+	&--1
+		top: 50.4%
+		left: 59.1%
+	&__text, &__arrow, &__push
 		display: block
 		position: absolute
 		top: 0
@@ -102,21 +182,251 @@ html, body
 		right: 0
 		bottom: 0
 		margin: auto
+	&__text
+		&--blue
+			path
+				fill: #2B209F!important
+	&__arrow
+		width: 27%
+	&__push
+		width: 28%
+
+.video
+	position: absolute
+	top: 1200px
+	left: 1500px
+	width: 1300px
+	height: 700px
+	background-image: url(/img/@2x/video.png)
+	background-repeat: no-repeat
+	background-position: 50%
+	background-size: cover
+	clip-path: url(#mask-video)
+
+.more
+	position: absolute
+	width: 300px
+	height: 300px
+	top: 1100px
+	left: 2700px
+	background-color: #211e77
 
 
 
 @media only screen and (max-width : 1599px)
-	.wrap
-		min-height: 900px
+	.slide
+		min-height: 100%
+		height: auto
+		&::before
+			content: ''
+			display: block
+			padding-top: 56%
+		&__logo
+			width: 4%
+			top: 44vw
+			left: 1%
+
 
 	.grid
+		position: absolute
+		top: 0
+		left: 0
 		min-width: 0
 		min-height: 0
 		width: 100%
 		height: 100%
+		transform: translate(0, 0)
+
+	.top-line
+		width: 64%
+		top: 2vw
+		left: 7.2%
+		font-size: 12px
+		&__title
+			width: 154px
+		&__link
+			&:not(:last-of-type)
+				margin-right: 108px
 
 	.title
 		top: 6vw
-		left: 16.5%
+		left: 12.2%
 		width: 36%
 		height: auto
+
+	.cube
+		&--1
+			width: 31%
+			top: 19vw
+			left: 19%
+		&--2
+			width: 16%
+			top: 0vw
+			left: 83%
+
+	.star
+		display: block
+		position: absolute
+		&--1
+			width: 12.5%
+			top: 25vw
+			left: 6%
+		&--2
+			width: 6%
+			top: 44vw
+			left: 56.2%
+		&--3
+			width: 6%
+			top: 6vw
+			left: 75%
+
+	.button
+		width: 19%
+		top: 36vw
+		left: 66.5%
+
+	.ellips
+		width: 22%
+		top: 4vw
+		left: 54.5%
+
+	.text
+		width: 31%
+		top: 20vw
+		left: 52.7%
+		font-size: 24px
+		line-height: 28px
+
+@media only screen and (max-width : 1279px)
+	.text
+		top: 18vw
+
+	.button
+		top: 37vw
+		left: 78.5%
+
+@media only screen and (max-width : 1024px)
+	.slide
+		&__logo
+			top: auto
+			bottom: -18px
+
+	.top-line
+		width: 65%
+		top: 2.5%
+		&__title
+			width: 100px
+
+	.title
+		top: 12.5vw
+
+	.ellips
+		top: 13.5%
+
+	.cube
+		&--1
+			top: 25vw
+		&--2
+			top: 9%
+
+	.button
+		top: 47vw
+		left: 68.5%
+
+	.star
+		&--1
+			top: 31vw
+		&--2
+			top: 67%
+		&--3
+			top: 16.8%
+
+	.text
+		top: 36%
+		font-size: 20px
+		line-height: 25px
+
+@media only screen and (max-width : 1023px)
+	.slide
+		&::before
+			padding-top: 177%
+		&__logo
+			width: 9%
+			bottom: auto
+			top: 141vw
+			left: 4%
+		
+	.top-line
+		width: 80%
+		top: 3.5vw
+		left: 10%
+		font-size: 10px
+		&__link
+			&:not(:last-of-type)
+				margin-right: 14px
+
+	.title
+		top: 18.5vw
+		left: 9.2%
+		width: 53%
+
+	.text
+		top: 91vw
+		left: 11.7%
+		width: 75%
+		font-size: 14px
+		line-height: 18px
+
+	.cube
+		&--1
+			top: 36vw
+			left: 40%
+			width: 50%
+		&--2
+			top: 128vw
+			left: 23%
+			width: 27%
+
+	.ellips
+		top: 15vw
+		left: 62%
+		width: 30%
+
+	.star
+		&--1
+			top: 63vw
+			left: 10%
+			width: 17%
+		&--2
+			top: 90vw
+			left: 82%
+			width: 9%
+		&--3
+			top: 45vw
+			left: 27%
+			width: 9%
+
+	.button
+		width: 36%
+		top: 137vw
+		left: 55.5%
+
+@media only screen and (max-width : 768px) and (min-width : 768px)
+	.slide
+		&::before
+			padding-top: 1024px
+
+@media only screen and (max-width : 1023px) and (min-width : 768px)
+	.slide
+		&__logo
+			top: 109vw
+
+	.cube
+		&--2
+			top: 101vw
+
+	.text
+		top: 88vw
+
+	.button
+		top: 97vw

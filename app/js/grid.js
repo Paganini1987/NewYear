@@ -35,12 +35,16 @@ export default class Grid {
 		this.path.setAttribute('vector-effect', 'non-scaling-stroke')
 
 		if (wrapWidth >= 1600) {
-			this.svg.setAttribute('viewBox', '0 0 4096 3072')
+			this.svg.setAttribute('viewBox', '0 0 4400 3100')
 			this.path.setAttribute('stroke', 'url(#paint0_linear)')
 			this.path.setAttribute('mask', 'url(#mask-1)')
 			
 		} else if (wrapWidth >= 1024) {
 			this.svg.setAttribute('viewBox', '0 0 1599 ' + Math.round(1599/ratio))
+			this.path.setAttribute('stroke', 'url(#paint1_linear)')
+			this.path.setAttribute('mask', 'url(#mask-2)')
+		} else if (wrapWidth >= 320) {
+			this.svg.setAttribute('viewBox', '0 0 1100 ' + Math.round(1599/ratio))
 			this.path.setAttribute('stroke', 'url(#paint1_linear)')
 			this.path.setAttribute('mask', 'url(#mask-2)')
 		}

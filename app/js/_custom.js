@@ -1,11 +1,11 @@
 import Grid from './grid'
 
 document.addEventListener("DOMContentLoaded", function() {
-	let svg = document.querySelectorAll('.grid_svg');
+	let svg = document.querySelectorAll('.grid__svg');
 	let grids = [];
 
 	for (let i = 0; i < svg.length; i++) {
-		let grid = new Grid(svg[i], document.querySelector('.slide'));
+		let grid = new Grid(svg[i], document.querySelector('.slide.active'));
 
 		grids.push(grid)
 	}
