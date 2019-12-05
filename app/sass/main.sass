@@ -107,6 +107,9 @@ html, body
 		display: block
 		path
 			stroke-width: 1px
+		&--1
+			clip-path: polygon(1400px 1100px,1400px 1700px,1600px 1700px,1600px 1800px,1900px 1800px,1900px 2000px, 2800px 2000px, 2800px 1900px,2900px 1900px, 2900px 1600px, 3000px 1600px, 3000px 1400px, 2700px 1400px, 2700px 1200px, 2000px 1200px, 2000px 1100px)
+			mask: url(#mask-1);
 
 .title
 	display: block
@@ -275,6 +278,16 @@ html, body
 	75%
 		transform: translate3d(-1px,0,0) rotate(0deg)
 
+.close
+	display: block
+	position: absolute
+	left: 2900px
+	top: 1100px
+	svg
+		path
+			fill: #fff
+			transition: 0.3s
+
 .button
 	display: block
 	position: absolute
@@ -292,6 +305,11 @@ html, body
 	&--1
 		top: 50.4%
 		left: 59.1%
+	&--2
+		top: 52.6%
+		left: 47.1%
+		.button__arrow
+			transform: rotate(-30deg)
 	&__text, &__arrow, &__push
 		display: block
 		position: absolute
@@ -321,6 +339,13 @@ html, body
 			&:hover
 				svg
 					animation: spinningIcon .7s linear infinite
+
+	.close
+		&:hover
+			svg
+				path
+					fill: #DFBCE4
+
 
 
 @keyframes button-spinning
@@ -422,6 +447,40 @@ html, body
 	transition: 0.3s
 	&:hover
 		color: #DFBCE4
+
+.rules
+	position: absolute
+	top: 1300px
+	left: 1700px
+	color: #fff
+	font-size: 22px
+	font-family: Formular
+	padding: 26px 14px
+	&__top
+		margin-bottom: 47px
+		line-height: 1
+	&__text
+		width: 478px
+
+.number
+	position: absolute
+	width: 200px
+	color: #fff
+	font-family: Lyno
+	text-align: center
+	&--1
+		top: 1400px
+		left: 2300px
+	&--2
+		top: 1400px
+		left: 2500px
+	&__value
+		font-size: 200px
+		line-height: 1
+	&__text
+		font-size: 33px
+		line-height: 1
+		text-transform: uppercase
 
 
 
