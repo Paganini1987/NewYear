@@ -21,9 +21,10 @@ body
 	min-width: 320px
 	position: relative
 	line-height: 1.65
-	font-family: 'Roboto', sans-serif
+	font-family: sans-serif
 	color: $text
 	background-color: #211e77
+	overflow-x: hidden
 
 html, body
 	height: 100%
@@ -39,7 +40,7 @@ html, body
 	display: none
 	position: relative
 	overflow: hidden
-	width: 100%
+	width: 100vw
 	height: 100%
 	min-height: 900px
 	background-image: url('/img/@2x/gradient.jpg')
@@ -84,9 +85,12 @@ html, body
 		&:not(:last-of-type)
 			margin-right: 132px
 		a
-			color: #fff!important
+			color: #fff
 			text-decoration: none!important
 			outline: none!important
+			transition: 0.3s
+			&:hover
+				color: #DFBCE4
 
 .grid
 	position: relative
@@ -110,6 +114,10 @@ html, body
 	top: 38.5%
 	left: 36.2%
 	width: 594px
+	&--1
+		top: 39%
+		left: 36.7%
+		width: 668px
 
 
 .cube
@@ -123,6 +131,10 @@ html, body
 		top: 35.5%
 		left: 62%
 		width: 263px
+	&--3
+		top: 48.5%
+		left: 38.7%
+		width: 395px
 
 .star
 	display: block
@@ -139,6 +151,64 @@ html, body
 		width: 100px
 		top: 38.8%
 		left: 59%
+	&--4
+		width: 100px
+		top: 1400px
+		left: 1400px
+	&--5
+		width: 100px
+		top: 1200px
+		left: 2600px
+	&--6
+		width: 200px
+		top: 1300px
+		left: 2700px
+
+.glasses
+	display: block
+	position: absolute
+	&--1
+		width: 115px
+		top: 1595px
+		left: 1492px
+		circle
+			fill: #6122EF
+	&--2
+		width: 115px
+		top: 1893px
+		left: 1692px
+		transform: rotate(-45deg)
+		circle
+			fill: #A526E9
+	&--3
+		width: 74px
+		top: 1363px
+		left: 1774px
+		z-index: 10
+		transform: rotate(15deg)
+		circle
+			fill: #1400E9
+	&--4
+		width: 54px
+		top: 1623px
+		left: 2123px
+		transform: rotate(15deg)
+		circle
+			fill: #A526E9
+	&--5
+		width: 74px
+		top: 1615px
+		left: 2813px
+		transform: rotate(15deg)
+		circle
+			fill: #1400E9
+	&--6
+		width: 54px
+		top: 1220px
+		left: 2924px
+		transform: rotate(15deg)
+		circle
+			fill: #6122EF
 
 .ellips
 	display: block
@@ -156,6 +226,54 @@ html, body
 	color: #fff
 	font-size: 33px
 	line-height: 38px
+	&--1
+		width: 570px
+		top: 49.3%
+		left: 50.7%
+		font-size: 28px
+		line-height: 32px
+
+.share
+	position: absolute
+	display: flex
+	align-items: center
+	left: 2200px
+	top: 1800px
+	height: 100px
+	&__insta, &__fb
+		position: relative
+		height: 100%
+		width: 100px
+		background-color: #FC3F27
+		svg
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			margin: auto
+	&__insta
+		border-right: 1px solid #fff
+	&__text
+		width: 500px
+		height: 100%
+		background: linear-gradient(180deg, #1839D2 0%, #1839D2 100%)
+		color: #fff
+		padding: 30px 40px
+		font-size: 16px
+		line-height: 18px
+		font-family: Formular
+
+@keyframes spinningIcon
+	0%, to
+		transform: translate3d(0,-1px,0) rotate(2deg)
+	25%
+		transform: translate3d(1px,0,0) rotate(0deg)
+	50%
+		transform: translate3d(0,1px,0) rotate(-2deg)
+	75%
+		transform: translate3d(-1px,0,0) rotate(0deg)
 
 .button
 	display: block
@@ -191,6 +309,47 @@ html, body
 	&__push
 		width: 28%
 
+.no-touchevents
+	.button
+		&:hover
+			animation: button-spinning .7s linear infinite
+			.button__text
+				animation: text-spinning 3s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite
+
+	.share
+		&__insta, &__fb
+			&:hover
+				svg
+					animation: spinningIcon .7s linear infinite
+
+
+@keyframes button-spinning
+	0%, to
+		transform: translate3d(0,-6px,0) rotate(2deg)
+	25%
+		transform: translate3d(6px,0,0) rotate(0deg)
+	50%
+		transform: translate3d(0,6px,0) rotate(-2deg)
+	75%
+		transform: translate3d(-6px,0,0) rotate(0deg)
+
+@keyframes text-spinning
+	50%
+		transform: rotate(0deg)
+	65%
+		transform: rotate(360deg)
+	100%
+		transform: rotate(360deg)
+
+.time
+	position: absolute
+	top: 1130px
+	left: 2040px
+	font-size: 45px
+	line-height: 1
+	color: #fff
+	font-family: Lyno
+
 .video
 	position: absolute
 	top: 1200px
@@ -205,11 +364,65 @@ html, body
 
 .more
 	position: absolute
+	display: flex
+	flex-direction: column
+	align-items: center
+	justify-content: space-between
 	width: 300px
 	height: 300px
 	top: 1100px
 	left: 2700px
+	padding: 25px
 	background-color: #211e77
+	color: #fff
+	&__progress
+		display: flex
+		align-items: center
+		list-style: none
+		padding: 0
+		margin: 0
+	&__star
+		&:not(:last-of-type)
+			margin-right: 14px
+		svg
+			display: block
+			width: 58px
+			path
+				fill: #F8F8F8
+				transition: 0.3s
+		&.active
+			svg
+				path
+					fill: #FC3F27
+	&__title
+		font-size: 22px
+		line-height: 38px
+		font-family: Lyno
+		margin-top: 24px
+	&__text
+		text-align: center
+		font-size: 20px
+		line-height: 30px
+		font-family: Arial, Helvetica, sans-serif
+	&__score
+		font-size: 24px
+		line-height: 30px
+		font-family: Lyno
+
+.help
+	display: block
+	position: absolute
+	top: 1935px
+	left: 2862px
+	font-family: Fugue
+	font-size: 16px
+	color: #fff
+	text-decoration: none!important
+	outline: none!important
+	transition: 0.3s
+	&:hover
+		color: #DFBCE4
+
 
 
 
@@ -253,6 +466,11 @@ html, body
 		left: 12.2%
 		width: 36%
 		height: auto
+		&--1
+			top: 7vw
+			left: 13.4%
+			width: 42%
+			height: auto
 
 	.cube
 		&--1
@@ -263,6 +481,10 @@ html, body
 			width: 16%
 			top: 0vw
 			left: 83%
+		&--3
+			top: 25vw
+			left: 18.7%
+			width: 25%
 
 	.star
 		display: block
@@ -279,11 +501,26 @@ html, body
 			width: 6%
 			top: 6vw
 			left: 75%
+		&--4
+			width: 6%
+			top: 19vw
+			left: 0%
+		&--5
+			width: 6%
+			top: 6.2vw
+			left: 75%
+		&--6
+			width: 12%
+			top: 12.7vw
+			left: 81.5%
 
 	.button
 		width: 19%
 		top: 36vw
 		left: 66.5%
+		&--1
+			top: 28.5vw
+			left: 74.5%
 
 	.ellips
 		width: 22%
@@ -296,6 +533,89 @@ html, body
 		left: 52.7%
 		font-size: 24px
 		line-height: 28px
+		&--1
+			width: 35%
+			top: 27vw
+			left: 52.7%
+			font-size: 22px
+			line-height: 26px
+
+	.video
+		top: 6.3vw
+		left: 6.3%
+		width: 81.2%
+		height: 43.7vw
+		clip-path: polygon(0% 0%, 0% 71.5%, 15.5% 71.5%, 15.5% 100%, 100% 100%, 100% 0%)
+
+	.help
+		font-size: 14px
+		top: 52.3vw
+		left: 91%
+
+	.more
+		top: 0
+		right: 0
+		left: auto
+		width: 18.7vw
+		height: 18.7vw
+		padding: 16px
+		&__star
+			&:not(:last-of-type)
+				margin-right: 21px
+			svg
+				width: 47px
+		&__title
+			font-size: 19px
+		&__text
+			font-size: 16px
+			line-height: 26px
+		&__score
+			font-size: 20px
+
+	.time
+		top: 1.2vw
+		left: 32.2vw
+
+	.share
+		top: 43.8vw
+		left: 50%
+		height: 6.1vw
+		&__insta, &__fb
+			height: 100%
+			width: 6.3vw
+		&__text
+			width: 31.1vw
+			height: 100%
+			padding: 22px 33px
+			font-size: 14px
+			line-height: 16px
+
+	.glasses
+		&--1
+			width: 7%
+			top: 30.8vw
+			left: 5.6%
+		&--2
+			width: 7%
+			top: 49.8vw
+			left: 11.9%
+		&--3
+			width: 5%
+			top: 16.8vw
+			left: 22.9%
+		&--4
+			width: 3%
+			top: 32.8vw
+			left: 45.3%
+		&--5
+			width: 5%
+			top: 31.8vw
+			left: 88%
+		&--6
+			width: 3%
+			top: 7.8vw
+			left: 95%
+
 
 @media only screen and (max-width : 1279px)
 	.text
@@ -304,6 +624,16 @@ html, body
 	.button
 		top: 37vw
 		left: 78.5%
+		&--1
+			top: 28.5vw
+			left: 74.5%
+
+	.more
+		&__star
+			&:not(:last-of-type)
+				margin-right: 15px
+		&__title
+			margin-top: 0
 
 @media only screen and (max-width : 1024px)
 	.slide
@@ -313,7 +643,7 @@ html, body
 
 	.top-line
 		width: 65%
-		top: 2.5%
+		top: 1.5%
 		&__title
 			width: 100px
 
@@ -332,6 +662,9 @@ html, body
 	.button
 		top: 47vw
 		left: 68.5%
+		&--1
+			top: 48.5vw
+			left: 63.5%
 
 	.star
 		&--1
@@ -345,6 +678,31 @@ html, body
 		top: 36%
 		font-size: 20px
 		line-height: 25px
+
+	.more
+		&__star
+			svg
+				width: 40px
+		&__title
+			font-size: 15px
+		&__text
+			font-size: 14px
+			line-height: 20px
+		&__score
+			font-size: 16px
+
+	.video
+		top: 12.6vw
+		height: 49.9vw
+		clip-path: polygon(0 0,0 74.9%,15.5% 74.9%,15.5% 100%,100% 100%,100% 0)
+
+	.help
+		top: 64.3vw
+
+	.time
+		font-size: 34px
+		top: 1.5vw
+		left: 39.2vw
 
 @media only screen and (max-width : 1023px)
 	.slide
