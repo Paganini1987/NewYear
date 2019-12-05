@@ -109,7 +109,12 @@ html, body
 			stroke-width: 1px
 		&--1
 			clip-path: polygon(1400px 1100px,1400px 1700px,1600px 1700px,1600px 1800px,1900px 1800px,1900px 2000px, 2800px 2000px, 2800px 1900px,2900px 1900px, 2900px 1600px, 3000px 1600px, 3000px 1400px, 2700px 1400px, 2700px 1200px, 2000px 1200px, 2000px 1100px)
-			mask: url(#mask-1);
+			path
+				mask: url(#mask-1)
+		&--2
+			clip-path: polygon(1400px 1100px,1400px 1700px,1600px 1700px,1600px 1800px,1900px 1800px,1900px 2000px, 2800px 2000px, 2800px 1900px,2900px 1900px, 2900px 1600px, 3000px 1600px, 3000px 1400px, 2700px 1400px, 2700px 1200px, 2000px 1200px, 2000px 1100px)
+			path
+				mask: url(#mask-2)
 
 .title
 	display: block
@@ -165,6 +170,18 @@ html, body
 	&--6
 		width: 200px
 		top: 1300px
+		left: 2700px
+	&--7
+		width: 200px
+		top: 1300px
+		left: 2400px
+	&--8
+		width: 100px
+		top: 1600px
+		left: 2400px
+	&--9
+		width: 100px
+		top: 1400px
 		left: 2700px
 
 .glasses
@@ -283,7 +300,9 @@ html, body
 	position: absolute
 	left: 2900px
 	top: 1100px
+	width: 101px
 	svg
+		display: block
 		path
 			fill: #fff
 			transition: 0.3s
@@ -345,6 +364,11 @@ html, body
 			svg
 				path
 					fill: #DFBCE4
+
+	.gift__button
+		&:hover
+			span
+				animation: spinningIcon .7s linear infinite 
 
 
 
@@ -482,6 +506,137 @@ html, body
 		line-height: 1
 		text-transform: uppercase
 
+.standart
+	position: absolute
+	top: 1300px
+	left: 1700px
+	color: #fff
+	padding-top: 109px
+	padding-left: 11px
+	&__text
+		width: 530px
+		font-family: Lyno
+		font-size: 65px
+		line-height: 1
+	&__footer
+		width: 286px
+		font-size: 22px
+		line-height: 1
+		margin-top: 20px
+
+.overlay
+	visibility: hidden
+	position: absolute
+	display: flex
+	align-items: center
+	justify-content: center
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	background-color: rgba(#000, 0.4)
+	z-index: 100
+	opacity: 0
+	transition: 0.5s
+	&--stranger
+		align-items: flex-end
+		text-align: center
+	&__wrapper
+		position: absolute
+		left: 50%
+		top: 57%
+		display: none
+		width: 355px
+		transform: translateX(-50%)
+	&__value
+		color: #fff
+		font-size: 250px
+		line-height: 1
+		font-family: Lyno
+	&__wrapper
+		color: #fff
+	&__time
+		font-family: Lyno
+		font-size: 33px
+		line-height: 1.2
+		margin-bottom: 8px
+	&__text
+		font-family: Formular
+		font-size: 18px
+		line-height: 1.2
+
+.gift
+	visibility: hidden
+	position: absolute
+	width: 400px
+	top: 50%
+	left: 50%
+	z-index: 100
+	opacity: 0
+	transform: scale(0.8)
+	transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+	&__text
+		padding: 22px 30px
+		background-color: #1839D2
+		color: #fff
+		font-family: Formular
+		font-size: 18px
+		line-height: 1.2
+	&__footer
+		display: flex
+		align-items: center
+	&__button
+		display: block
+		width: 50%
+		line-height: 77px
+		font-size: 16px
+		font-family: Lyno
+		text-align: center
+		text-decoration: none!important
+		&--red
+			color: #fff!important
+			background-color: #FC3F27
+		&--white
+			color: #FC3F27!important
+			background-color: #fff
+		span
+			display: inline-block
+
+.slide
+	&.showOverlay
+		.grid
+			z-index: 10
+		.overlay
+			visibility: visible
+			opacity: 1
+		.button--1
+			display: none
+	&.showOverlayStranger
+		.grid
+			z-index: 10
+		.overlay--stranger
+			visibility: visible
+			opacity: 1
+		.overlay__wrapper
+			display: block
+		.button--1
+			display: none
+		.time
+			display: none
+		.more
+			*
+				display: none
+		.help
+			display: none
+
+	&.showGift
+		.gift
+			visibility: visible
+			transform: scale(1)
+			opacity: 1
+		.button--1
+			display: none
+
 
 
 
@@ -508,6 +663,15 @@ html, body
 		width: 100%
 		height: 100%
 		transform: translate(0, 0)
+		&__svg
+			&--1
+				clip-path: polygon(0 0,0 37.6vw,12.4% 37.6vw,12.4% 43.8vw,31.3% 43.8vw,31% 100vw,87.6% 100vw,87.6% 50.1vw,93.9% 50.1vw,93.9% 31.4vw,100% 31.4vw,100% 18.7vw,81.3% 18.7vw,81.3% 6.1vw,37.6% 6.1vw,37.6% 0)
+				path
+					mask: url(#mask-11)
+			&--2
+				clip-path: polygon(0 0,0 37.6vw,12.4% 37.6vw,12.4% 43.8vw,31.3% 43.8vw,31% 100vw,87.6% 100vw,87.6% 50.1vw,93.9% 50.1vw,93.9% 31.4vw,100% 31.4vw,100% 18.7vw,81.3% 18.7vw,81.3% 6.1vw,37.6% 6.1vw,37.6% 0)
+				path
+					mask: url(#mask-21)
 
 	.top-line
 		width: 64%
@@ -572,6 +736,18 @@ html, body
 			width: 12%
 			top: 12.7vw
 			left: 81.5%
+		&--7
+			width: 12%
+			top: 13vw
+			left: 63%
+		&--8
+			width: 6%
+			top: 31.7vw
+			left: 62.5%
+		&--9
+			width: 6%
+			top: 19vw
+			left: 81.5%
 
 	.button
 		width: 19%
@@ -580,6 +756,9 @@ html, body
 		&--1
 			top: 28.5vw
 			left: 74.5%
+		&--2
+			top: 32vw
+			left: 40.5%
 
 	.ellips
 		width: 22%
@@ -675,6 +854,50 @@ html, body
 			top: 7.8vw
 			left: 95%
 
+	.gift
+		width: 372px
+		&__text
+			font-size: 16px
+		&__button
+			font-size: 14px
+
+	.overlay
+		&__wrapper
+			top: 40vw
+
+	.rules
+		top: 12vw
+		left: 18.5%
+		&__top
+			margin-bottom: 27px
+		&__text
+			width: 382px
+
+	.number
+		width: 12%
+		&--1
+			top: 19vw
+			left: 56.5%
+		&--2
+			top: 19vw
+			left: 69%
+		&__value
+			font-size: 183px
+		&__text
+			font-size: 25px
+
+	.close
+		top: 0
+		left: auto
+		right: 0
+		width: 5%
+
+	.standart
+		top: 9vw
+		left: 19%
+		&__text
+			font-size: 54px
+
 
 @media only screen and (max-width : 1279px)
 	.text
@@ -762,6 +985,10 @@ html, body
 		font-size: 34px
 		top: 1.5vw
 		left: 39.2vw
+
+	.gift
+		&__button
+			line-height: 85px
 
 @media only screen and (max-width : 1023px)
 	.slide

@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	let grids = [];
 
 	for (let i = 0; i < svg.length; i++) {
-		let grid = new Grid(svg[i], document.querySelector('.slide.active'));
+		let grid = new Grid(svg[i], '.slide.active');
 
 		grids.push(grid)
 	}

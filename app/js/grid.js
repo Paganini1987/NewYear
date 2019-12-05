@@ -1,6 +1,7 @@
 export default class Grid {
-	constructor (svg, wrap) {
-		this.wrap = wrap;
+	constructor (svg, selector) {
+		this.selector = selector
+		this.wrap = document.querySelector(this.selector);
 		this.svg = svg;
 		this.path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
 
@@ -28,6 +29,7 @@ export default class Grid {
 		return path
 	}
 	resize () {
+		this.wrap = document.querySelector(this.selector);
 		let wrapWidth = this.wrap.clientWidth;
 		let wrapHeight = this.wrap.clientHeight;
 		let ratio =wrapWidth / wrapHeight;
@@ -37,16 +39,12 @@ export default class Grid {
 		if (wrapWidth >= 1600) {
 			this.svg.setAttribute('viewBox', '0 0 4400 3100')
 			this.path.setAttribute('stroke', 'url(#paint0_linear)')
-			this.path.setAttribute('mask', 'url(#mask-1)')
-			
 		} else if (wrapWidth >= 1024) {
 			this.svg.setAttribute('viewBox', '0 0 1599 ' + Math.round(1599/ratio))
 			this.path.setAttribute('stroke', 'url(#paint1_linear)')
-			this.path.setAttribute('mask', 'url(#mask-2)')
 		} else if (wrapWidth >= 320) {
 			this.svg.setAttribute('viewBox', '0 0 1100 ' + Math.round(1599/ratio))
 			this.path.setAttribute('stroke', 'url(#paint1_linear)')
-			this.path.setAttribute('mask', 'url(#mask-2)')
 		}
 	}
 }
