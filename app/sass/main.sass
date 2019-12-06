@@ -55,6 +55,11 @@ html, body
 		top: 80%
 		left: 1%
 		z-index: 10
+	&__center
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%,-50%)
 
 .top-line
 	position: absolute
@@ -108,11 +113,11 @@ html, body
 		path
 			stroke-width: 1px
 		&--1
-			clip-path: polygon(1400px 1100px,1400px 1700px,1600px 1700px,1600px 1800px,1900px 1800px,1900px 2000px, 2800px 2000px, 2800px 1900px,2900px 1900px, 2900px 1600px, 3000px 1600px, 3000px 1400px, 2700px 1400px, 2700px 1200px, 2000px 1200px, 2000px 1100px)
+			// clip-path: polygon(1400px 1100px,1400px 1700px,1600px 1700px,1600px 1800px,1900px 1800px,1900px 2000px, 2800px 2000px, 2800px 1900px,2900px 1900px, 2900px 1600px, 3000px 1600px, 3000px 1400px, 2700px 1400px, 2700px 1200px, 2000px 1200px, 2000px 1100px)
 			path
 				mask: url(#mask-1)
 		&--2
-			clip-path: polygon(1400px 1100px,1400px 1700px,1600px 1700px,1600px 1800px,1900px 1800px,1900px 2000px, 2800px 2000px, 2800px 1900px,2900px 1900px, 2900px 1600px, 3000px 1600px, 3000px 1400px, 2700px 1400px, 2700px 1200px, 2000px 1200px, 2000px 1100px)
+			// clip-path: polygon(1400px 1100px,1400px 1700px,1600px 1700px,1600px 1800px,1900px 1800px,1900px 2000px, 2800px 2000px, 2800px 1900px,2900px 1900px, 2900px 1600px, 3000px 1600px, 3000px 1400px, 2700px 1400px, 2700px 1200px, 2000px 1200px, 2000px 1100px)
 			path
 				mask: url(#mask-2)
 
@@ -606,7 +611,7 @@ html, body
 	&.showOverlay
 		.grid
 			z-index: 10
-		.overlay
+		.overlay--1
 			visibility: visible
 			opacity: 1
 		.button--1
@@ -637,6 +642,24 @@ html, body
 		.button--1
 			display: none
 
+.rotate
+	position: relative
+	svg
+		display: block
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+	&__text
+		font-size: 30px
+		line-height: 1
+		color: #fff
+		font-family: Lyno
+		text-align: center
+		margin-top: 70px
+		span
+			color: #FC3F27
+
 
 
 
@@ -665,11 +688,11 @@ html, body
 		transform: translate(0, 0)
 		&__svg
 			&--1
-				clip-path: polygon(0 0,0 37.6vw,12.4% 37.6vw,12.4% 43.8vw,31.3% 43.8vw,31% 100vw,87.6% 100vw,87.6% 50.1vw,93.9% 50.1vw,93.9% 31.4vw,100% 31.4vw,100% 18.7vw,81.3% 18.7vw,81.3% 6.1vw,37.6% 6.1vw,37.6% 0)
+				// clip-path: polygon(0 0,0 37.6vw,12.4% 37.6vw,12.4% 43.8vw,31.3% 43.8vw,31% 100vw,87.6% 100vw,87.6% 50.1vw,93.9% 50.1vw,93.9% 31.4vw,100% 31.4vw,100% 18.7vw,81.3% 18.7vw,81.3% 6.1vw,37.6% 6.1vw,37.6% 0)
 				path
 					mask: url(#mask-11)
 			&--2
-				clip-path: polygon(0 0,0 37.6vw,12.4% 37.6vw,12.4% 43.8vw,31.3% 43.8vw,31% 100vw,87.6% 100vw,87.6% 50.1vw,93.9% 50.1vw,93.9% 31.4vw,100% 31.4vw,100% 18.7vw,81.3% 18.7vw,81.3% 6.1vw,37.6% 6.1vw,37.6% 0)
+				// clip-path: polygon(0 0,0 37.6vw,12.4% 37.6vw,12.4% 43.8vw,31.3% 43.8vw,31% 100vw,87.6% 100vw,87.6% 50.1vw,93.9% 50.1vw,93.9% 31.4vw,100% 31.4vw,100% 18.7vw,81.3% 18.7vw,81.3% 6.1vw,37.6% 6.1vw,37.6% 0)
 				path
 					mask: url(#mask-21)
 
@@ -902,6 +925,9 @@ html, body
 @media only screen and (max-width : 1279px)
 	.text
 		top: 18vw
+		&--1
+			top: 26vw
+			font-size: 20px
 
 	.button
 		top: 37vw
@@ -909,6 +935,10 @@ html, body
 		&--1
 			top: 28.5vw
 			left: 74.5%
+		&--2
+			width: 240px
+			top: 36vw
+			left: 38%
 
 	.more
 		&__star
@@ -916,6 +946,30 @@ html, body
 				margin-right: 15px
 		&__title
 			margin-top: 0
+
+	.share
+		top: 50vw
+		&__text
+			padding: 5px 25px
+
+	.rules
+		padding: 23px 13px
+		&__top
+			margin-bottom: 15px
+		&__text
+			width: 304px
+
+	.number
+		&__value
+			font-size: 137px
+		&__text
+			font-size: 21px
+
+	.standart
+		top: 5vw
+		left: 19.5%
+		&__text
+			width: 50%
 
 @media only screen and (max-width : 1024px)
 	.slide
@@ -940,6 +994,10 @@ html, body
 			top: 25vw
 		&--2
 			top: 9%
+		&--3
+			top: 31vw
+			left: 11.7%
+			width: 32%
 
 	.button
 		top: 47vw
@@ -955,11 +1013,19 @@ html, body
 			top: 67%
 		&--3
 			top: 16.8%
+		&--4
+			top: 25vw
+		&--5
+			top: 12.2vw
+		&--6
+			top: 18.7vw
 
 	.text
 		top: 36%
 		font-size: 20px
 		line-height: 25px
+		&--1
+			top: 33vw
 
 	.more
 		&__star
@@ -990,16 +1056,48 @@ html, body
 		&__button
 			line-height: 85px
 
+	.share
+		top: 56.4vw
+
+	.glasses
+		&--1
+			width: 8%
+			top: 43vw
+		&--2
+			width: 8%
+			top: 61.8vw
+			left: 11.5%
+		&--3
+			top: 22.8vw
+			left: 25.9%
+		&--4
+			top: 39vw
+		&--5
+			top: 38vw
+		&--6
+			width: 4%
+			top: 14vw
+
+	.standart
+		top: 3vw
+		left: 19.5%
+		&__text
+			width: 50%
+
+	.overlay
+		&__wrapper
+			top: 50vw
+
 @media only screen and (max-width : 1023px)
 	.slide
 		&::before
-			padding-top: 177%
+			padding-top: 162%
 		&__logo
 			width: 9%
 			bottom: auto
-			top: 141vw
+			top: 125vw
 			left: 4%
-		
+
 	.top-line
 		width: 80%
 		top: 3.5vw
@@ -1015,7 +1113,7 @@ html, body
 		width: 53%
 
 	.text
-		top: 91vw
+		top: 76vw
 		left: 11.7%
 		width: 75%
 		font-size: 14px
@@ -1023,47 +1121,275 @@ html, body
 
 	.cube
 		&--1
-			top: 36vw
-			left: 40%
+			top: 28vw
+			left: 47%
 			width: 50%
 		&--2
-			top: 128vw
-			left: 23%
+			top: 118vw
+			left: 19%
 			width: 27%
 
 	.ellips
-		top: 15vw
+		top: 8vw
 		left: 62%
 		width: 30%
 
 	.star
 		&--1
-			top: 63vw
+			top: 46vw
 			left: 10%
 			width: 17%
 		&--2
-			top: 90vw
-			left: 82%
+			top: 82vw
+			left: 91%
 			width: 9%
 		&--3
-			top: 45vw
-			left: 27%
+			top: 37vw
+			left: 36%
 			width: 9%
 
 	.button
 		width: 36%
-		top: 137vw
+		top: 113vw
 		left: 55.5%
+
+	
+		
+
+@media only screen and (max-width : 1023px) and (orientation: portrait)
+	.slide
+		&--landscape
+			display: none
+			&.active
+				display: none
+			
+				& ~ .slide--portrait
+					display: block
+		
+
+@media only screen and (max-width : 1023px) and (orientation: landscape)
+	.slide
+		&--landscape
+			&::before
+				padding-top: 56%
+			&--landscape
+				width: 5%
+				top: 35vw
+				left: 2%
+		&__logo
+			&--landscape
+				width: 5%
+				bottom: auto
+				top: 35vw
+				left: 2%
+
+	.grid
+		&__svg
+			&--1
+				// clip-path: polygon(0 0, 0 40vw, 12.4% 40vw, 15.4% 45.6vw, 29.6% 45.6vw, 31% 100vw, 90% 100vw, 90% 50.1vw, 95.1% 50.1vw, 95.1% 39.4vw, 100% 35.4vw, 100% 24.7vw, 80.3% 24.7vw, 80.3% 5vw, 35.6% 4.5vw, 35.6% 0)
+				path
+					mask: url(#mask-12)
+			&--2
+				// clip-path: polygon(0 0, 0 40vw, 12.4% 40vw, 15.4% 45.6vw, 29.6% 45.6vw, 31% 100vw, 90% 100vw, 90% 50.1vw, 95.1% 50.1vw, 95.1% 39.4vw, 100% 35.4vw, 100% 24.7vw, 80.3% 24.7vw, 80.3% 5vw, 35.6% 4.5vw, 35.6% 0)
+				path
+					mask: url(#mask-21)
+		
+	.top-line
+		&--landscape
+			width: 77%
+			top: 0.5vw
+			left: 5%
+			&:not(:last-of-type)
+				margin-right: 14px
+
+	.button
+		&--1
+			width: 20%
+			top: 28vw
+			left: 76.5%
+		&--2
+			width: 20%
+			top: 28vw
+			left: 67.5%
+
+	.time
+		font-size: 16px
+		top: 1vw
+		left: 50.5vw
+
+	.more
+		width: 15%
+		height: 15vw
+		padding: 7px
+		&__title
+			width: 100%
+			font-size: 55%
+			line-height: 1.2
+			text-align: center
+		&__text, &__score
+			width: 100%
+			font-size: 55%
+			line-height: 1.2
+			text-align: center
+		&__score
+
+		&__star
+			&:not(:last-of-type)
+				margin-right: 8px
+			svg
+				width: 100%
+
+	.video
+		top: 5.1vw
+		left: 5%
+		width: 85.1%
+		height: 44.9vw
+		clip-path: polygon(0 0, 0 77.9%, 11.5% 77.9%, 11.5% 100%, 100% 100%, 100% 0)
+
+	.help
+		top: 50.3vw
+		left: 86%
+
+	.ellips
+		&--1
+			top: 3vw
+			left: 43%
+			width: 18%
+
+	.title
+		&--1
+			top: 10.3vw
+			left: 10.2%
+			width: 35%
+
+	.star
+		&--4
+			width: 5%
+			top: 20vw
+			left: 0%
+		&--5
+			width: 5%
+			top: 10.2vw
+			left: 80%
+		&--6
+			width: 10%
+			top: 15.7vw
+			left: 85%
+
+	.cube
+		&--3
+			top: 25vw
+			left: 13.7%
+			width: 26%
+
+	.share
+		top: 45vw
+		left: 45%
+		height: 10.1vw
+		&__insta, &__fb
+			width: 10.1vw
+		&__text
+			padding: 11px
+			width: 35vw
+			font-size: 10px
+			line-height: 1.2
+
+	.text
+		&--1
+			top: 16vw
+			left: 46.7%
+			width: 35%
+			font-size: 14px
+			line-height: 18px
+
+	.glasses
+		&--1
+			width: 6%
+			top: 39.7vw
+			left: 9.3%
+		&--3
+			top: 17.8vw
+			left: 16.9%
+		&--4
+			width: 4%
+			top: 31vw
+			left: 40.3%
+		&--5
+			width: 5%
+			top: 30.5vw
+			left: 90%
+
+	.rules
+		top: 9vw
+		left: 9.5%
+		padding: 17px 9px
+		font-size: 90%
+		&__text
+			width: 27vw
+
+	.number
+		&--1
+			top: 16vw
+			left: 44.5%
+		&--2
+			top: 16vw
+			left: 54.5%
+		&__value
+			font-size: 10vw
+		&__text
+			font-size: 60%
+
+	.standart
+		top: 8vw
+		left: 14.5%
+		padding: 17px 9px
+		font-size: 90%
+		width: 27vw
+		&__text
+			font-size: 4vw
+			width: 100%
+		&__footer
+			width: 100%
+			font-size: 14px
+			margin-top: 5px
+
+	.overlay
+		&__value
+			font-size: 120px
+		&__wrapper
+			top: 36vw
+		&__time
+			font-size: 22px
+		&__text
+			font-size: 12px
+
+	.gift
+		width: 230px
+		&__text
+			font-size: 10px
+			padding: 15px
+		&__button
+			line-height: 40px
+			font-size: 10px
+
+			
 
 @media only screen and (max-width : 768px) and (min-width : 768px)
 	.slide
 		&::before
 			padding-top: 1024px
+		&--landscape
+			&::before
+				padding-top: 56%
 
 @media only screen and (max-width : 1023px) and (min-width : 768px)
 	.slide
 		&__logo
 			top: 109vw
+			&--landscape
+				width: 5%
+				top: 35vw
+				left: 2%
 
 	.cube
 		&--2
@@ -1071,6 +1397,17 @@ html, body
 
 	.text
 		top: 88vw
+		&--1
+			top: 16vw
+
 
 	.button
 		top: 97vw
+		&--1
+			width: 20%
+			top: 28vw
+			left: 76.5%
+		&--2
+			width: 20%
+			top: 28vw
+			left: 67.5%

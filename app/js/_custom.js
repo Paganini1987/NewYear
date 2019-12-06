@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	let grids = [];
 
 	for (let i = 0; i < svg.length; i++) {
-		let grid = new Grid(svg[i], '.slide.active');
+		let grid = new Grid(svg[i], '.slide');
 
 		grids.push(grid)
 	}
@@ -40,6 +40,10 @@ document.addEventListener("DOMContentLoaded", function() {
 				currentSlide++
 			} else {
 				currentSlide = 0
+			}
+
+			for (let i = 0; i < grids.length; i++) {
+				grids[i].resize()
 			}
 		}
 	})
