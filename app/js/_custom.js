@@ -1,4 +1,5 @@
 import Grid from './grid'
+import animations from './animations'
 
 // Определяет сенсорные экраны
 /*! modernizr 3.6.0 (Custom Build) | MIT *
@@ -48,3 +49,5 @@ document.addEventListener("DOMContentLoaded", function() {
 		}
 	})
 });
+
+animations()

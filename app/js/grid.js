@@ -44,7 +44,7 @@ export default class Grid {
 			this.svg.setAttribute('viewBox', '0 0 1599 ' + Math.round(1599/ratio))
 			this.path.setAttribute('stroke', 'url(#paint1_linear)')
 		} else if (wrapWidth >= 320) {
-			this.svg.setAttribute('viewBox', '0 0 1100 ' + Math.round(1599/ratio))
+			this.svg.setAttribute('viewBox', '0 0 1100 ' + Math.round(1100/ratio))
 			this.path.setAttribute('stroke', 'url(#paint1_linear)')
 		}
 
