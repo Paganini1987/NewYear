@@ -23,19 +23,22 @@ document.addEventListener("DOMContentLoaded", function() {
 		}
 	})
 
+	// Событие смены ориентации
+	window.addEventListener("orientationchange", function() {
+		window.scrollTo(0,0)
+	}, false);
+
 	for (let i = 0; i < grids.length; i++) {
 		grids[i].resize()
 	}
 
 	//Временное решение листать слайды
-	let currentSlide = 1;
+	let currentSlide = 0;
 	let slides = document.querySelectorAll('.slide')
 
 	document.addEventListener('click', function(e) {
 		if (e.target.closest('.slide__logo')) {
 			[].forEach.call(slides, slide=>slide.classList.remove('active'))
-
-			slides[currentSlide].classList.add('active')
 
 			if (currentSlide < slides.length - 1) {
 				currentSlide++
@@ -43,11 +46,27 @@ document.addEventListener("DOMContentLoaded", function() {
 				currentSlide = 0
 			}
 
+			slides[currentSlide].classList.add('active')
+
 			for (let i = 0; i < grids.length; i++) {
 				grids[i].resize()
+			}
+
+
+			if (currentSlide === 1) {
+				animations.slide1Play()
+			}
+			if (currentSlide === 2) {
+				animations.slide2Play()
+			}
+			if (currentSlide === 3) {
+				animations.slide3Play()
+			}
+			if (currentSlide === 4) {
+				animations.slide4Play()
 			}
 		}
 	})
 });
 
-animations()
+animations.init()

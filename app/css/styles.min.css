@@ -1060,8 +1060,8 @@ html, body {
   background-repeat: no-repeat;
   background-position: 50%;
   background-size: cover;
-  -webkit-clip-path: url(#mask-video);
-          clip-path: url(#mask-video);
+  -webkit-clip-path: polygon(0px 0px, 0px 500px, 200px 500px, 200px 700px, 1300px 700px, 1300px 0px);
+          clip-path: polygon(0px 0px, 0px 500px, 200px 500px, 200px 700px, 1300px 700px, 1300px 0px);
 }
 
 .more {
@@ -1175,7 +1175,7 @@ html, body {
 .help {
   display: block;
   position: absolute;
-  top: 1935px;
+  top: 2038px;
   left: 2862px;
   font-family: Fugue;
   font-size: 16px;
@@ -1471,6 +1471,26 @@ html, body {
 
 .rotate__text span {
   color: #FC3F27;
+}
+
+@media only screen and (min-width: 1920px) {
+  .video {
+    top: 1100px;
+    left: 1300px;
+    width: 1700px;
+    height: 900px;
+    -webkit-clip-path: polygon(0px 0px, 0px 700px, 200px 700px, 200px 900px, 1700px 900px, 1700px 0px);
+            clip-path: polygon(0px 0px, 0px 700px, 200px 700px, 200px 900px, 1700px 900px, 1700px 0px);
+  }
+  .top-line--video {
+    top: 33.5%;
+  }
+  .time {
+    top: 1030px;
+  }
+  .button--1 {
+    left: 64%;
+  }
 }
 
 @media only screen and (max-width: 1599px) {
@@ -1964,7 +1984,7 @@ html, body {
   .slide__logo {
     width: 9%;
     bottom: auto;
-    top: 125vw;
+    top: 115vw;
     left: 4%;
   }
   .top-line {
@@ -1994,7 +2014,7 @@ html, body {
     width: 50%;
   }
   .cube--2 {
-    top: 118vw;
+    top: 109vw;
     left: 19%;
     width: 27%;
   }
@@ -2020,7 +2040,7 @@ html, body {
   }
   .button {
     width: 36%;
-    top: 113vw;
+    top: 112vw;
     left: 55.5%;
   }
 }
