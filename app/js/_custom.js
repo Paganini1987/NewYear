@@ -25,7 +25,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	// Событие смены ориентации
 	window.addEventListener("orientationchange", function() {
-		window.scrollTo(0,0)
+		setTimeout(()=>{
+			window.scrollTo(0,0)
+		}, 500)
 	}, false);
 
 	for (let i = 0; i < grids.length; i++) {

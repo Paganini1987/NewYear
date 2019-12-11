@@ -45,22 +45,20 @@ function init () {
 	}, 5000)
 
 	slide0
-		.from('[data-slide="0"] .top-line, [data-slide="0"] .title, [data-slide="0"] .cube, [data-slide="0"] .ellips, [data-slide="0"] .text', 1.5, {
+		.from('[data-slide="0"] .title, [data-slide="0"] .text', 0.6, {
 			y: 50,
 			opacity: 0
 		})
-		.from('[data-slide="0"] .button', 1, {
-			scale: 0.5, 
-			opacity: 0, 
-			ease: "elastic", 
-			force3D: true
-		}, '-=0.5')
-		.from('[data-slide="0"] .slide__logo', 0.3, {
-			x: -50,
+		.from('[data-slide="0"] .cube', 0.3, {
+			y: 50,
+			opacity: 0
+		})
+		.from('[data-slide="0"] .ellips', 0.3, {
+			y: 50,
 			opacity: 0
 		})
 		.from('[data-slide="0"] .star', {
-			duration: 2,
+			duration: 1.5,
 			scale: 0.5, 
 			opacity: 0, 
 			delay: 0.5, 
@@ -74,7 +72,22 @@ function init () {
 					item.classList.add('animation')
 				})
 			}
-		}, '-=1')
+		})
+		.from('[data-slide="0"] .top-line', 0.3, {
+			y: -150,
+			opacity: 0
+		},'-=1')
+		.from('[data-slide="0"] .button', 1, {
+			scale: 0.5, 
+			opacity: 0, 
+			ease: "elastic", 
+			force3D: true
+		}, '-=0.5')
+		.from('[data-slide="0"] .slide__logo', 0.3, {
+			x: -50,
+			opacity: 0
+		})
+		
 
 
 	//Gradient только на десктопе
@@ -113,8 +126,8 @@ function init () {
 }
 
 slide1
-	.from('[data-slide="1"] .top-line, [data-slide="1"] .title', 1.5, {
-		y: 50,
+	.from('[data-slide="1"] .top-line', 0.3, {
+		y: -150,
 		opacity: 0
 	})
 	.from('[data-slide="1"] .button', 1, {
@@ -130,8 +143,20 @@ slide1
 
 
 slide2
-	.from('[data-slide="2"] .top-line, [data-slide="2"] .title, [data-slide="2"] .cube, [data-slide="2"] .ellips, [data-slide="2"] .text', 1.5, {
+	.from('[data-slide="2"] .title, [data-slide="2"] .text', 0.6, {
 		y: 50,
+		opacity: 0
+	})
+	.from('[data-slide="2"] .cube', 0.3, {
+		y: 50,
+		opacity: 0
+	})
+	.from('[data-slide="2"] .ellips', 0.3, {
+		y: 50,
+		opacity: 0
+	})
+	.from('[data-slide="2"] .top-line', 0.3, {
+		y: -150,
 		opacity: 0
 	})
 	.from('[data-slide="2"] .share', 1, {

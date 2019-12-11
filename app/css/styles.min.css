@@ -1175,7 +1175,7 @@ html, body {
 .help {
   display: block;
   position: absolute;
-  top: 2038px;
+  top: 1938px;
   left: 2862px;
   font-family: Fugue;
   font-size: 16px;
@@ -1493,6 +1493,57 @@ html, body {
   }
 }
 
+@media only screen and (min-width: 1920px) and (min-aspect-ratio: 16 / 9) {
+  .video {
+    top: 1200px;
+    left: 1300px;
+    width: 1700px;
+    height: 800px;
+    -webkit-clip-path: polygon(0px 0px, 0px 600px, 200px 600px, 200px 900px, 1700px 900px, 1700px 0px);
+            clip-path: polygon(0px 0px, 0px 600px, 200px 600px, 200px 900px, 1700px 900px, 1700px 0px);
+  }
+  .top-line--video {
+    top: 36.5%;
+  }
+  .time {
+    top: 1125px;
+  }
+  .help {
+    top: 1935px;
+    left: 3042px;
+  }
+}
+
+@media only screen and (min-width: 1600px) and (min-aspect-ratio: 16 / 9) {
+  .slide {
+    min-height: 850px;
+  }
+  .top-line {
+    top: 37%;
+  }
+  .button {
+    top: 53.4%;
+  }
+  .button--1 {
+    top: 50.4%;
+  }
+  .text {
+    top: 45%;
+  }
+  .text--1 {
+    top: 49.3%;
+  }
+  .cube--2 {
+    top: 36.5%;
+  }
+  .time {
+    top: 1138px;
+  }
+  .help {
+    top: 1926px;
+  }
+}
+
 @media only screen and (max-width: 1599px) {
   .slide {
     min-height: 100%;
@@ -1658,8 +1709,8 @@ html, body {
   }
   .help {
     font-size: 14px;
-    top: 52.3vw;
-    left: 91%;
+    top: 46.3vw;
+    left: 91.5%;
   }
   .more {
     top: 0;
@@ -1712,7 +1763,7 @@ html, body {
   }
   .glasses--2 {
     width: 7%;
-    top: 49.8vw;
+    top: 46.8vw;
     left: 11.9%;
   }
   .glasses--3 {
@@ -1786,6 +1837,47 @@ html, body {
   }
   .standart__text {
     font-size: 54px;
+  }
+}
+
+@media only screen and (max-width: 1599px) and (min-width: 1280px) and (min-aspect-ratio: 16 / 9) {
+  .slide::before {
+    padding-top: 47%;
+  }
+  .slide__logo {
+    top: 35vw;
+  }
+  .cube--1 {
+    width: 25%;
+  }
+  .cube--3 {
+    width: 19%;
+  }
+  .text {
+    top: 18vw;
+    font-size: 24px;
+    line-height: 29px;
+  }
+  .text--1 {
+    top: 23vw;
+    left: 56.7%;
+    width: 39%;
+    font-size: 19px;
+    line-height: 23px;
+  }
+  .button {
+    top: 30vw;
+  }
+  .video {
+    height: 37.4vw;
+    -webkit-clip-path: polygon(0% 0%, 0% 66.5%, 15.5% 66.5%, 15.5% 100%, 100% 100%, 100% 0%);
+            clip-path: polygon(0% 0%, 0% 66.5%, 15.5% 66.5%, 15.5% 100%, 100% 100%, 100% 0%);
+  }
+  .help {
+    top: 44.3vw;
+  }
+  .share {
+    top: 37.6vw;
   }
 }
 
