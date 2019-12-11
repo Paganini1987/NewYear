@@ -17,10 +17,13 @@ function init () {
 	selectors.forEach(selector=>{
 		let img = new Image();
 
-		arrImgs.push(img)
+		
+		if (document.querySelector(selector) && document.querySelector(selector).getAttribute('src')) {
+			img.src = document.querySelector(selector).getAttribute('src')
 
-		img.src = document.querySelector(selector).getAttribute('src')
-
+			arrImgs.push(img)
+		}
+		
 		img.onload = function () {
 			img._loaded = true;
 
