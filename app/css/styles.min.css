@@ -422,9 +422,12 @@ html, body {
   width: 100vw;
   height: 100%;
   min-height: 900px;
-  background-repeat: no-repeat;
-  background-position: 50%;
-  background-size: cover;
+  background: -webkit-gradient(linear, right top, left top, from(#5f0bbc), color-stop(#2a17a0), to(#07145b));
+  background: -o-linear-gradient(right, #5f0bbc, #2a17a0, #07145b);
+  background: linear-gradient(270deg, #5f0bbc, #2a17a0, #07145b);
+  background-size: 600% 600%;
+  -webkit-animation: gradient 12s ease infinite;
+          animation: gradient 12s ease infinite;
 }
 
 .slide[data-slide="0"] .grid > *:not(.grid__svg) {
@@ -450,6 +453,30 @@ html, body {
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .loaded .slide[data-slide="0"] .grid * {
@@ -540,6 +567,11 @@ html, body {
   stroke-width: 1px;
 }
 
+.grid__svg--0 path {
+  -webkit-mask: url(#mask-0);
+          mask: url(#mask-0);
+}
+
 .grid__svg--1 path {
   -webkit-mask: url(#mask-1);
           mask: url(#mask-1);
@@ -550,12 +582,27 @@ html, body {
           mask: url(#mask-2);
 }
 
+.grid__svg--3 path {
+  -webkit-mask: url(#mask-3);
+          mask: url(#mask-3);
+}
+
+.grid__svg--4 path {
+  -webkit-mask: url(#mask-4);
+          mask: url(#mask-4);
+}
+
 .title {
   display: block;
   position: absolute;
   top: 38.5%;
   left: 36.2%;
   width: 594px;
+  overflow: hidden;
+}
+
+.title svg {
+  width: 100%;
 }
 
 .title--1 {
@@ -765,12 +812,17 @@ html, body {
 .text {
   position: absolute;
   width: 526px;
-  top: 46%;
+  top: 45.5%;
   left: 50.7%;
   font-family: Formular;
   color: #fff;
   font-size: 33px;
   line-height: 38px;
+  overflow: hidden;
+}
+
+.text span {
+  display: block;
 }
 
 .text--1 {
@@ -1474,6 +1526,10 @@ html, body {
 }
 
 @media only screen and (min-width: 1920px) {
+  .grid__svg--1 path {
+    -webkit-mask: url(#mask-11);
+            mask: url(#mask-11);
+  }
   .video {
     top: 1100px;
     left: 1300px;
@@ -1491,9 +1547,17 @@ html, body {
   .button--1 {
     left: 64%;
   }
+  .help {
+    top: 2038px;
+  }
 }
 
 @media only screen and (min-width: 1920px) and (min-aspect-ratio: 16 / 9) {
+  .grid {
+    -webkit-transform: translate(-50%, -51%);
+        -ms-transform: translate(-50%, -51%);
+            transform: translate(-50%, -51%);
+  }
   .video {
     top: 1200px;
     left: 1300px;
@@ -1514,12 +1578,9 @@ html, body {
   }
 }
 
-@media only screen and (min-width: 1600px) and (min-aspect-ratio: 16 / 9) {
+@media only screen and (min-width: 1600px) and (max-width: 1919px) and (min-aspect-ratio: 16 / 9) {
   .slide {
     min-height: 850px;
-  }
-  .top-line {
-    top: 37%;
   }
   .button {
     top: 53.4%;
@@ -1528,16 +1589,13 @@ html, body {
     top: 50.4%;
   }
   .text {
-    top: 45%;
+    top: 45.5%;
   }
   .text--1 {
     top: 49.3%;
   }
   .cube--2 {
-    top: 36.5%;
-  }
-  .time {
-    top: 1138px;
+    top: 35.5%;
   }
   .help {
     top: 1926px;
@@ -1571,13 +1629,25 @@ html, body {
         -ms-transform: translate(0, 0);
             transform: translate(0, 0);
   }
+  .grid__svg--0 path {
+    -webkit-mask: url(#mask-01);
+            mask: url(#mask-01);
+  }
   .grid__svg--1 path {
-    -webkit-mask: url(#mask-11);
-            mask: url(#mask-11);
+    -webkit-mask: url(#mask-12);
+            mask: url(#mask-12);
   }
   .grid__svg--2 path {
     -webkit-mask: url(#mask-21);
             mask: url(#mask-21);
+  }
+  .grid__svg--3 path {
+    -webkit-mask: url(#mask-31);
+            mask: url(#mask-31);
+  }
+  .grid__svg--4 path {
+    -webkit-mask: url(#mask-41);
+            mask: url(#mask-41);
   }
   .top-line {
     width: 64%;
@@ -1686,11 +1756,11 @@ html, body {
     left: 54.5%;
   }
   .text {
-    width: 40%;
+    width: 35%;
     top: 20vw;
     left: 52.7%;
-    font-size: 28px;
-    line-height: 34px;
+    font-size: 24px;
+    line-height: 28px;
   }
   .text--1 {
     width: 35%;
@@ -1849,21 +1919,23 @@ html, body {
   }
   .cube--1 {
     width: 25%;
+    left: 22%;
   }
   .cube--3 {
+    left: 21.7%;
     width: 19%;
   }
   .text {
-    top: 18vw;
-    font-size: 24px;
-    line-height: 29px;
+    top: 19vw;
+    font-size: 20px;
+    line-height: 24px;
   }
   .text--1 {
-    top: 23vw;
-    left: 56.7%;
+    top: 25.5vw;
+    left: 51.7%;
     width: 39%;
     font-size: 19px;
-    line-height: 23px;
+    line-height: 20px;
   }
   .button {
     top: 30vw;
@@ -1874,7 +1946,7 @@ html, body {
             clip-path: polygon(0% 0%, 0% 66.5%, 15.5% 66.5%, 15.5% 100%, 100% 100%, 100% 0%);
   }
   .help {
-    top: 44.3vw;
+    top: 46.3vw;
   }
   .share {
     top: 37.6vw;
@@ -2071,12 +2143,12 @@ html, body {
 
 @media only screen and (max-width: 1023px) {
   .slide::before {
-    padding-top: 162%;
+    padding-top: 142%;
   }
   .slide__logo {
     width: 9%;
     bottom: auto;
-    top: 115vw;
+    top: 99vw;
     left: 4%;
   }
   .top-line {
@@ -2094,7 +2166,7 @@ html, body {
     width: 53%;
   }
   .text {
-    top: 76vw;
+    top: 72vw;
     left: 11.7%;
     width: 75%;
     font-size: 14px;
@@ -2102,11 +2174,11 @@ html, body {
   }
   .cube--1 {
     top: 28vw;
-    left: 47%;
-    width: 50%;
+    left: 50%;
+    width: 45%;
   }
   .cube--2 {
-    top: 109vw;
+    top: 105vw;
     left: 19%;
     width: 27%;
   }
@@ -2131,8 +2203,8 @@ html, body {
     width: 9%;
   }
   .button {
-    width: 36%;
-    top: 112vw;
+    width: 34%;
+    top: 105vw;
     left: 55.5%;
   }
 }
@@ -2164,13 +2236,13 @@ html, body {
     top: 35vw;
     left: 2%;
   }
-  .grid__svg--1 path {
-    -webkit-mask: url(#mask-12);
-            mask: url(#mask-12);
+  .grid__svg--3 path {
+    -webkit-mask: url(#mask-32);
+            mask: url(#mask-32);
   }
-  .grid__svg--2 path {
-    -webkit-mask: url(#mask-21);
-            mask: url(#mask-21);
+  .grid__svg--4 path {
+    -webkit-mask: url(#mask-41);
+            mask: url(#mask-41);
   }
   .top-line--landscape {
     width: 77%;

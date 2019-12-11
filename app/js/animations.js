@@ -45,17 +45,20 @@ function init () {
 	}, 5000)
 
 	slide0
-		.from('[data-slide="0"] .title, [data-slide="0"] .text', 0.6, {
-			y: 50,
-			opacity: 0
+		.from('[data-slide="0"] .title svg, [data-slide="0"] .text span', 0.6, {
+			y: '100%',
+			opacity: 0,
+			ease: 'power2.out'
 		})
 		.from('[data-slide="0"] .cube', 0.3, {
-			y: 50,
-			opacity: 0
+			y: 80,
+			opacity: 0,
+			ease: 'power2.out'
 		})
 		.from('[data-slide="0"] .ellips', 0.3, {
-			y: 50,
-			opacity: 0
+			y: 80,
+			opacity: 0,
+			ease: 'power2.out'
 		})
 		.from('[data-slide="0"] .star', {
 			duration: 1.5,
@@ -75,7 +78,8 @@ function init () {
 		})
 		.from('[data-slide="0"] .top-line', 0.3, {
 			y: -150,
-			opacity: 0
+			opacity: 0,
+			ease: 'power2.out'
 		},'-=1')
 		.from('[data-slide="0"] .button', 1, {
 			scale: 0.5, 
@@ -85,50 +89,52 @@ function init () {
 		}, '-=0.5')
 		.from('[data-slide="0"] .slide__logo', 0.3, {
 			x: -50,
-			opacity: 0
+			opacity: 0,
+			ease: 'power2.out'
 		})
 		
 
 
 	//Gradient только на десктопе
-	if (window.innerWidth > 1024) {
-		var grad = gsap.timeline({
-			repeatDelay:1, 
-			repeat:-1, 
-			yoyo:true
-		});
+	// if (window.innerWidth > 1024) {
+	// 	var grad = gsap.timeline({
+	// 		repeatDelay:1, 
+	// 		repeat:-1, 
+	// 		yoyo:true
+	// 	});
 			
-		grad
-			.to('#gradient-stop-1', 5, {
-				stopColor:'#2A17A0'
-			})
-			.to('#gradient-stop-2', 5, {
-				stopColor:'#780BBC'
-			})
-			.to('#gradient-stop-3', 5, {
-				stopColor:'#07145B'
-			})
+	// 	grad
+	// 		.to('#gradient-stop-1', 5, {
+	// 			stopColor:'#2A17A0'
+	// 		})
+	// 		.to('#gradient-stop-2', 5, {
+	// 			stopColor:'#780BBC'
+	// 		})
+	// 		.to('#gradient-stop-3', 5, {
+	// 			stopColor:'#07145B'
+	// 		})
 
-		var grad1 = gsap.timeline({
-			repeatDelay:1, 
-			repeat:-1, 
-			yoyo:true
-		});
+	// 	var grad1 = gsap.timeline({
+	// 		repeatDelay:1, 
+	// 		repeat:-1, 
+	// 		yoyo:true
+	// 	});
 			
-		grad1
-			.to('#paint0_linear > stop', 5, {
-				stopColor:'#06D1EE'
-			})
-			.to('#paint1_linear > stop', 5, {
-				stopColor:'#06D1EE'
-			})
-	}
+	// 	grad1
+	// 		.to('#paint0_linear > stop', 5, {
+	// 			stopColor:'#06D1EE'
+	// 		})
+	// 		.to('#paint1_linear > stop', 5, {
+	// 			stopColor:'#06D1EE'
+	// 		})
+	// }
 }
 
 slide1
-	.from('[data-slide="1"] .top-line', 0.3, {
+	.from('[data-slide="1"] .top-line, [data-slide="1"] .time', 0.3, {
 		y: -150,
-		opacity: 0
+		opacity: 0,
+		ease: 'power2.out'
 	})
 	.from('[data-slide="1"] .button', 1, {
 		scale: 0.5, 
@@ -138,26 +144,31 @@ slide1
 	}, 0)
 	.from('[data-slide="1"] .slide__logo', 0.3, {
 		x: -50,
-		opacity: 0
+		opacity: 0,
+		ease: 'power2.out'
 	}, 0)
 
 
 slide2
-	.from('[data-slide="2"] .title, [data-slide="2"] .text', 0.6, {
-		y: 50,
-		opacity: 0
+	.from('[data-slide="2"] .title svg, [data-slide="2"] .text span', 0.6, {
+		y: '100%',
+		opacity: 0,
+		ease: 'power2.out'
 	})
 	.from('[data-slide="2"] .cube', 0.3, {
-		y: 50,
-		opacity: 0
+		y: 80,
+		opacity: 0,
+		ease: 'power2.out'
 	})
 	.from('[data-slide="2"] .ellips', 0.3, {
-		y: 50,
-		opacity: 0
+		y: 80,
+		opacity: 0,
+		ease: 'power2.out'
 	})
 	.from('[data-slide="2"] .top-line', 0.3, {
 		y: -150,
-		opacity: 0
+		opacity: 0,
+		ease: 'power2.out'
 	})
 	.from('[data-slide="2"] .share', 1, {
 		scale: 0.5, 
@@ -167,7 +178,8 @@ slide2
 	}, '-=0.5')
 	.from('[data-slide="2"] .slide__logo', 0.3, {
 		x: -50,
-		opacity: 0
+		opacity: 0,
+		ease: 'power2.out'
 	})
 	.from('[data-slide="2"] .star', {
 		duration: 2,
@@ -201,9 +213,10 @@ fallingGlasses
 	});
 
 slide3
-	.from('[data-slide="3"] .rules', 1.5, {
+	.from('[data-slide="3"] .rules', 0.6, {
 		y: 50,
-		opacity: 0
+		opacity: 0,
+		ease: 'power2.out'
 	})
 	.from('[data-slide="3"] .number', 1, {
 		scale: 0.5, 
@@ -222,13 +235,15 @@ slide3
 	})
 	.from('[data-slide="3"] .slide__logo', 0.3, {
 		x: -50,
-		opacity: 0
+		opacity: 0,
+		ease: 'power2.out'
 	}, 0)
 
 slide4
-	.from('[data-slide="4"] .standart', 1.5, {
+	.from('[data-slide="4"] .standart', 0.6, {
 		y: 50,
-		opacity: 0
+		opacity: 0,
+		ease: 'power2.out'
 	})
 	.from('[data-slide="4"] .star', 1, {
 		scale: 0.5, 
@@ -244,7 +259,8 @@ slide4
 	},0)
 	.from('[data-slide="4"] .slide__logo', 0.3, {
 		x: -50,
-		opacity: 0
+		opacity: 0,
+		ease: 'power2.out'
 	}, 0)
 	
 function slide1Play() {
