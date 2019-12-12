@@ -503,7 +503,6 @@ html, body {
   font-family: Fugue;
   font-size: 14px;
   color: #fff;
-  z-index: 10;
 }
 
 .top-line__title {
@@ -561,6 +560,7 @@ html, body {
 
 .grid__svg {
   display: block;
+  height: 100%;
 }
 
 .grid__svg path {
@@ -595,7 +595,7 @@ html, body {
 .title {
   display: block;
   position: absolute;
-  top: 38.5%;
+  top: 38.6%;
   left: 36.2%;
   width: 594px;
   overflow: hidden;
@@ -618,14 +618,14 @@ html, body {
 
 .cube--1 {
   top: 45.5%;
-  left: 38.5%;
+  left: 38.6%;
   width: 500px;
 }
 
 .cube--2 {
   top: 35.5%;
   left: 62%;
-  width: 263px;
+  width: 250px;
 }
 
 .cube--3 {
@@ -645,21 +645,21 @@ html, body {
 }
 
 .star--1 {
-  width: 200px;
+  width: 195px;
   top: 48.5%;
-  left: 34%;
+  left: 34.1%;
 }
 
 .star--2 {
-  width: 100px;
-  top: 58%;
-  left: 52.2%;
+  width: 95px;
+  top: 58.2%;
+  left: 52.3%;
 }
 
 .star--3 {
-  width: 100px;
+  width: 95px;
   top: 38.8%;
-  left: 59%;
+  left: 59.1%;
 }
 
 .star--4 {
@@ -960,6 +960,7 @@ html, body {
 .button--1 {
   top: 50.4%;
   left: 59.1%;
+  z-index: 20;
 }
 
 .button--2 {
@@ -1108,12 +1109,50 @@ html, body {
   left: 1500px;
   width: 1300px;
   height: 700px;
+  -webkit-clip-path: polygon(0px 0px, 0px 500px, 200px 500px, 200px 700px, 1300px 700px, 1300px 200px, 1200px 200px, 1200px 0px);
+          clip-path: polygon(0px 0px, 0px 500px, 200px 500px, 200px 700px, 1300px 700px, 1300px 200px, 1200px 200px, 1200px 0px);
+  z-index: 10;
+}
+
+.video__stream {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-image: url(/img/@2x/video.png);
   background-repeat: no-repeat;
   background-position: 50%;
   background-size: cover;
-  -webkit-clip-path: polygon(0px 0px, 0px 500px, 200px 500px, 200px 700px, 1300px 700px, 1300px 0px);
-          clip-path: polygon(0px 0px, 0px 500px, 200px 500px, 200px 700px, 1300px 700px, 1300px 0px);
+}
+
+.video__preview {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(/img/@2x/video.png);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  opacity: 0;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.video__preview svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 18%;
+  -webkit-animation: star 5s linear infinite;
+          animation: star 5s linear infinite;
 }
 
 .more {
@@ -1140,7 +1179,6 @@ html, body {
   top: 1100px;
   left: 2700px;
   padding: 25px;
-  background-color: #211e77;
   color: #fff;
 }
 
@@ -1317,22 +1355,37 @@ html, body {
 .overlay {
   visibility: hidden;
   position: absolute;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.wrapper {
+  visibility: hidden;
+  position: absolute;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: #fff;
   background-color: rgba(0, 0, 0, 0.4);
   z-index: 100;
   opacity: 0;
@@ -1341,47 +1394,59 @@ html, body {
   transition: 0.5s;
 }
 
-.overlay--stranger {
-  -webkit-box-align: end;
-  -webkit-align-items: flex-end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  text-align: center;
-}
-
-.overlay__wrapper {
+.wrapper__center {
   position: absolute;
   left: 50%;
-  top: 57%;
-  display: none;
-  width: 355px;
+  bottom: 50px;
+  width: 450px;
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
+  text-align: center;
 }
 
-.overlay__value {
+.wrapper__value {
   color: #fff;
   font-size: 250px;
   line-height: 1;
   font-family: Lyno;
 }
 
-.overlay__wrapper {
-  color: #fff;
+.wrapper__title {
+  font-family: Lyno;
+  font-size: 33px;
+  line-height: 1;
+  margin-bottom: 8px;
 }
 
-.overlay__time {
+.wrapper__time {
   font-family: Lyno;
   font-size: 33px;
   line-height: 1.2;
   margin-bottom: 8px;
 }
 
-.overlay__text {
+.wrapper__text {
   font-family: Formular;
   font-size: 18px;
   line-height: 1.2;
+}
+
+.wrapper__button {
+  display: inline-block;
+  min-width: 295px;
+  line-height: 78px;
+  text-align: center;
+  background-color: #FC3F27;
+  color: #fff !important;
+  margin-top: 15px;
+  font-family: Lyno;
+  font-size: 16px;
+  text-decoration: none !important;
+}
+
+.wrapper__button--small {
+  min-width: 187px;
 }
 
 .gift {
@@ -1448,7 +1513,12 @@ html, body {
   z-index: 10;
 }
 
-.slide.showOverlay .overlay--1 {
+.slide.showOverlay .overlay {
+  visibility: visible;
+  opacity: 1;
+}
+
+.slide.showOverlay .wrapper--counter {
   visibility: visible;
   opacity: 1;
 }
@@ -1461,13 +1531,14 @@ html, body {
   z-index: 10;
 }
 
-.slide.showOverlayStranger .overlay--stranger {
+.slide.showOverlayStranger .overlay {
   visibility: visible;
   opacity: 1;
 }
 
-.slide.showOverlayStranger .overlay__wrapper {
-  display: block;
+.slide.showOverlayStranger .wrapper--stranger {
+  visibility: visible;
+  opacity: 1;
 }
 
 .slide.showOverlayStranger .button--1 {
@@ -1498,6 +1569,71 @@ html, body {
   display: none;
 }
 
+.slide.showWantGift .grid {
+  z-index: 10;
+}
+
+.slide.showWantGift .overlay {
+  visibility: visible;
+  opacity: 1;
+}
+
+.slide.showWantGift .wrapper--gift {
+  visibility: visible;
+  opacity: 1;
+}
+
+.slide.showWantGift .button--1 {
+  display: none;
+}
+
+.slide.showWantGift .time {
+  display: none;
+}
+
+.slide.showWantGift .more * {
+  display: none;
+}
+
+.slide.showWantGift .help {
+  display: none;
+}
+
+.slide.showTimeOver .grid {
+  z-index: 10;
+}
+
+.slide.showTimeOver .overlay {
+  visibility: visible;
+  opacity: 1;
+}
+
+.slide.showTimeOver .wrapper--over {
+  visibility: visible;
+  opacity: 1;
+}
+
+.slide.showTimeOver .button--1 {
+  display: none;
+}
+
+.slide.showTimeOver .time {
+  display: none;
+}
+
+.slide.showTimeOver .more * {
+  display: none;
+}
+
+.slide.showTimeOver .help {
+  display: none;
+}
+
+.slide.showPreview .video__preview {
+  visibility: visible;
+  opacity: 1;
+}
+
 .rotate {
   position: relative;
 }
@@ -1526,17 +1662,13 @@ html, body {
 }
 
 @media only screen and (min-width: 1920px) {
-  .grid__svg--1 path {
-    -webkit-mask: url(#mask-11);
-            mask: url(#mask-11);
-  }
   .video {
     top: 1100px;
     left: 1300px;
     width: 1700px;
     height: 900px;
-    -webkit-clip-path: polygon(0px 0px, 0px 700px, 200px 700px, 200px 900px, 1700px 900px, 1700px 0px);
-            clip-path: polygon(0px 0px, 0px 700px, 200px 700px, 200px 900px, 1700px 900px, 1700px 0px);
+    -webkit-clip-path: polygon(0px 0px, 0px 700px, 200px 700px, 200px 900px, 1700px 900px, 1700px 300px, 1400px 300px, 1400px 0px);
+            clip-path: polygon(0px 0px, 0px 700px, 200px 700px, 200px 900px, 1700px 900px, 1700px 300px, 1400px 300px, 1400px 0px);
   }
   .top-line--video {
     top: 33.5%;
@@ -1553,6 +1685,10 @@ html, body {
 }
 
 @media only screen and (min-width: 1920px) and (min-aspect-ratio: 16 / 9) {
+  .grid__svg--1 path {
+    -webkit-mask: url(#mask-11);
+            mask: url(#mask-11);
+  }
   .grid {
     -webkit-transform: translate(-50%, -51%);
         -ms-transform: translate(-50%, -51%);
@@ -1563,8 +1699,8 @@ html, body {
     left: 1300px;
     width: 1700px;
     height: 800px;
-    -webkit-clip-path: polygon(0px 0px, 0px 600px, 200px 600px, 200px 900px, 1700px 900px, 1700px 0px);
-            clip-path: polygon(0px 0px, 0px 600px, 200px 600px, 200px 900px, 1700px 900px, 1700px 0px);
+    -webkit-clip-path: polygon(0px 0px, 0px 600px, 200px 600px, 200px 900px, 1700px 900px, 1700px 200px, 1400px 200px, 1400px 0px);
+            clip-path: polygon(0px 0px, 0px 600px, 200px 600px, 200px 900px, 1700px 900px, 1700px 200px, 1400px 200px, 1400px 0px);
   }
   .top-line--video {
     top: 36.5%;
@@ -1578,9 +1714,19 @@ html, body {
   }
 }
 
+@media only screen and (min-width: 1600px) and (max-width: 1919px) {
+  .grid__svg--1 path {
+    -webkit-mask: url(#mask-10);
+            mask: url(#mask-10);
+  }
+}
+
 @media only screen and (min-width: 1600px) and (max-width: 1919px) and (min-aspect-ratio: 16 / 9) {
   .slide {
     min-height: 850px;
+  }
+  .top-line {
+    top: 36.9%;
   }
   .button {
     top: 53.4%;
@@ -1595,7 +1741,7 @@ html, body {
     top: 49.3%;
   }
   .cube--2 {
-    top: 35.5%;
+    top: 36%;
   }
   .help {
     top: 1926px;
@@ -1704,7 +1850,7 @@ html, body {
   }
   .star--3 {
     width: 6%;
-    top: 6vw;
+    top: 6.3vw;
     left: 75%;
   }
   .star--4 {
@@ -1774,8 +1920,8 @@ html, body {
     left: 6.3%;
     width: 81.2%;
     height: 43.7vw;
-    -webkit-clip-path: polygon(0% 0%, 0% 71.5%, 15.5% 71.5%, 15.5% 100%, 100% 100%, 100% 0%);
-            clip-path: polygon(0% 0%, 0% 71.5%, 15.5% 71.5%, 15.5% 100%, 100% 100%, 100% 0%);
+    -webkit-clip-path: polygon(0% 0%, 0% 71.5%, 15.5% 71.5%, 15.5% 100%, 100% 100%, 100% 28%, 92.5% 28%, 92.5% 0%);
+            clip-path: polygon(0% 0%, 0% 71.5%, 15.5% 71.5%, 15.5% 100%, 100% 100%, 100% 28%, 92.5% 28%, 92.5% 0%);
   }
   .help {
     font-size: 14px;
@@ -1865,9 +2011,6 @@ html, body {
   .gift__button {
     font-size: 14px;
   }
-  .overlay__wrapper {
-    top: 40vw;
-  }
   .rules {
     top: 12vw;
     left: 18.5%;
@@ -1942,8 +2085,8 @@ html, body {
   }
   .video {
     height: 37.4vw;
-    -webkit-clip-path: polygon(0% 0%, 0% 66.5%, 15.5% 66.5%, 15.5% 100%, 100% 100%, 100% 0%);
-            clip-path: polygon(0% 0%, 0% 66.5%, 15.5% 66.5%, 15.5% 100%, 100% 100%, 100% 0%);
+    -webkit-clip-path: polygon(0% 0%, 0% 66.5%, 15.5% 66.5%, 15.5% 100%, 100% 100%, 100% 33%, 92.5% 33%, 92.5% 0%);
+            clip-path: polygon(0% 0%, 0% 66.5%, 15.5% 66.5%, 15.5% 100%, 100% 100%, 100% 33%, 92.5% 33%, 92.5% 0%);
   }
   .help {
     top: 46.3vw;
@@ -2011,6 +2154,18 @@ html, body {
 }
 
 @media only screen and (max-width: 1024px) {
+  .grid__svg--0 path {
+    -webkit-mask: url(#mask-02);
+            mask: url(#mask-02);
+  }
+  .grid__svg--1 path {
+    -webkit-mask: url(#mask-13);
+            mask: url(#mask-13);
+  }
+  .grid__svg--2 path {
+    -webkit-mask: url(#mask-22);
+            mask: url(#mask-22);
+  }
   .slide__logo {
     top: auto;
     bottom: -18px;
@@ -2047,6 +2202,9 @@ html, body {
     top: 48.5vw;
     left: 63.5%;
   }
+  .button--2 {
+    top: 40vw;
+  }
   .star--1 {
     top: 31vw;
   }
@@ -2066,7 +2224,7 @@ html, body {
     top: 18.7vw;
   }
   .text {
-    top: 36%;
+    top: 26vw;
     font-size: 20px;
     line-height: 25px;
   }
@@ -2089,8 +2247,8 @@ html, body {
   .video {
     top: 12.6vw;
     height: 49.9vw;
-    -webkit-clip-path: polygon(0 0, 0 74.9%, 15.5% 74.9%, 15.5% 100%, 100% 100%, 100% 0);
-            clip-path: polygon(0 0, 0 74.9%, 15.5% 74.9%, 15.5% 100%, 100% 100%, 100% 0);
+    -webkit-clip-path: polygon(0 0, 0 74.9%, 15.5% 74.9%, 15.5% 100%, 100% 100%, 100% 12%, 92.5% 12%, 92.5% 0%);
+            clip-path: polygon(0 0, 0 74.9%, 15.5% 74.9%, 15.5% 100%, 100% 100%, 100% 12%, 92.5% 12%, 92.5% 0%);
   }
   .help {
     top: 64.3vw;
@@ -2098,7 +2256,7 @@ html, body {
   .time {
     font-size: 34px;
     top: 1.5vw;
-    left: 39.2vw;
+    left: 33.2vw;
   }
   .gift__button {
     line-height: 85px;
@@ -2136,12 +2294,13 @@ html, body {
   .standart__text {
     width: 50%;
   }
-  .overlay__wrapper {
-    top: 50vw;
-  }
 }
 
 @media only screen and (max-width: 1023px) {
+  .grid__svg--0 path {
+    -webkit-mask: url(#mask-03);
+            mask: url(#mask-03);
+  }
   .slide::before {
     padding-top: 142%;
   }
@@ -2153,7 +2312,7 @@ html, body {
   }
   .top-line {
     width: 80%;
-    top: 3.5vw;
+    top: 2vw;
     left: 10%;
     font-size: 10px;
   }
@@ -2166,11 +2325,11 @@ html, body {
     width: 53%;
   }
   .text {
-    top: 72vw;
+    top: 74vw;
     left: 11.7%;
     width: 75%;
-    font-size: 14px;
-    line-height: 18px;
+    font-size: 3.5vw;
+    line-height: 1.4;
   }
   .cube--1 {
     top: 28vw;
@@ -2233,8 +2392,16 @@ html, body {
   .slide__logo--landscape {
     width: 5%;
     bottom: auto;
-    top: 35vw;
+    top: 36vw;
     left: 2%;
+  }
+  .grid__svg--1 path {
+    -webkit-mask: url(#mask-14);
+            mask: url(#mask-14);
+  }
+  .grid__svg--2 path {
+    -webkit-mask: url(#mask-23);
+            mask: url(#mask-23);
   }
   .grid__svg--3 path {
     -webkit-mask: url(#mask-32);
@@ -2244,10 +2411,25 @@ html, body {
     -webkit-mask: url(#mask-41);
             mask: url(#mask-41);
   }
+  .wrapper__center {
+    width: 300px;
+    bottom: 20px;
+  }
+  .wrapper__title {
+    font-size: 22px;
+  }
+  .wrapper__button {
+    line-height: 50px;
+    font-size: 14px;
+    min-width: 250px;
+  }
+  .wrapper__button--small {
+    min-width: 130px;
+  }
   .top-line--landscape {
     width: 77%;
     top: 0.5vw;
-    left: 5%;
+    left: 6%;
   }
   .top-line--landscape:not(:last-of-type) {
     margin-right: 14px;
@@ -2295,8 +2477,8 @@ html, body {
     left: 5%;
     width: 85.1%;
     height: 44.9vw;
-    -webkit-clip-path: polygon(0 0, 0 77.9%, 11.5% 77.9%, 11.5% 100%, 100% 100%, 100% 0);
-            clip-path: polygon(0 0, 0 77.9%, 11.5% 77.9%, 11.5% 100%, 100% 100%, 100% 0);
+    -webkit-clip-path: polygon(0 0, 0 77.9%, 11.5% 77.9%, 11.5% 100%, 100% 100%, 100% 22%, 94% 22%, 94% 0%);
+            clip-path: polygon(0 0, 0 77.9%, 11.5% 77.9%, 11.5% 100%, 100% 100%, 100% 22%, 94% 22%, 94% 0%);
   }
   .help {
     top: 50.3vw;
@@ -2349,7 +2531,7 @@ html, body {
   .text--1 {
     top: 16vw;
     left: 46.7%;
-    width: 35%;
+    width: 33%;
     font-size: 14px;
     line-height: 18px;
   }
@@ -2411,16 +2593,13 @@ html, body {
     font-size: 14px;
     margin-top: 5px;
   }
-  .overlay__value {
+  .wrapper__value {
     font-size: 120px;
   }
-  .overlay__wrapper {
-    top: 36vw;
-  }
-  .overlay__time {
+  .wrapper__time {
     font-size: 22px;
   }
-  .overlay__text {
+  .wrapper__text {
     font-size: 12px;
   }
   .gift {
@@ -2456,9 +2635,6 @@ html, body {
   }
   .cube--2 {
     top: 101vw;
-  }
-  .text {
-    top: 88vw;
   }
   .text--1 {
     top: 16vw;
