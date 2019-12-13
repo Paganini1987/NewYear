@@ -560,7 +560,7 @@ html, body {
 
 .grid__svg {
   display: block;
-  height: 100%;
+  height: auto;
 }
 
 .grid__svg path {
@@ -1443,10 +1443,19 @@ html, body {
   font-family: Lyno;
   font-size: 16px;
   text-decoration: none !important;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .wrapper__button--small {
   min-width: 187px;
+}
+
+.wrapper__button:hover {
+  -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .gift {

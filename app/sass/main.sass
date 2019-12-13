@@ -129,7 +129,7 @@ html, body
 	height: 100%
 	&__svg
 		display: block
-		height: 100%
+		height: auto
 		path
 			stroke-width: 1px
 		&--0
@@ -677,8 +677,11 @@ html, body
 		font-family: Lyno
 		font-size: 16px
 		text-decoration: none!important
+		transition: 0.3s
 		&--small
 			min-width: 187px
+		&:hover
+			transform: scale(1.05)
 
 .gift
 	visibility: hidden
