@@ -89,7 +89,7 @@ html, body
 	display: flex
 	align-items: center
 	justify-content: space-between
-	font-family: Fugue
+	font-family: Formular
 	font-size: 14px
 	color: #fff
 	&__title
@@ -289,11 +289,14 @@ html, body
 	left: 50.7%
 	font-family: Formular
 	color: #fff
-	font-size: 33px
-	line-height: 38px
+	font-size: 24px
+	line-height: 32px
 	overflow: hidden
 	span
 		display: block
+		span
+			display: inline-block
+			margin-bottom: 10px
 	&--1
 		width: 570px
 		top: 49.3%
@@ -393,7 +396,26 @@ html, body
 	&__arrow
 		width: 27%
 	&__push
-		width: 28%
+		width: 50%
+
+.button-square
+	display: flex
+	justify-content: center
+	align-items: center
+	position: absolute
+	top: 1700px
+	left: 2200px
+	width: 300px
+	height: 100px
+	background-color: #FC3F27
+	font-family: Lyno
+	color: #fff!important
+	font-size: 26px
+	line-height: 31px
+	text-decoration: none!important
+	transition: transform 0.3s
+	&:hover
+		transform: scale(1.05)
 
 .no-touchevents
 	.button
@@ -686,9 +708,9 @@ html, body
 .gift
 	visibility: hidden
 	position: absolute
-	width: 400px
-	top: 50%
-	left: 50%
+	width: 372px
+	bottom: 200px
+	right: 50px
 	z-index: 100
 	opacity: 0
 	transform: scale(0.8)
@@ -722,8 +744,9 @@ html, body
 
 .slide
 	&.showOverlay
-		.grid
-			z-index: 10
+		.slide__logo 
+			path
+				fill: #ddd
 		.overlay
 			visibility: visible
 			opacity: 1
@@ -734,8 +757,9 @@ html, body
 		.button--1
 			display: none
 	&.showOverlayStranger
-		.grid
-			z-index: 10
+		.slide__logo 
+			path
+				fill: #ddd
 		.overlay
 			visibility: visible
 			opacity: 1
@@ -761,8 +785,9 @@ html, body
 		.button--1
 			display: none
 	&.showWantGift
-		.grid
-			z-index: 10
+		.slide__logo 
+			path
+				fill: #ddd
 		.overlay
 			visibility: visible
 			opacity: 1
@@ -780,8 +805,9 @@ html, body
 		.help
 			display: none
 	&.showTimeOver
-		.grid
-			z-index: 10
+		.slide__logo 
+			path
+				fill: #ddd
 		.overlay
 			visibility: visible
 			opacity: 1
@@ -884,10 +910,10 @@ html, body
 
 @media only screen and (min-width : 1600px) and (max-width : 1919px) and (min-aspect-ratio : 16/9)
 	.slide
-		min-height: 850px
+		min-height: 894px
 
 	.top-line
-		top: 36.9%
+		// top: 36.9%
 
 	.button
 		top: 53.4%
@@ -960,7 +986,7 @@ html, body
 			width: 154px
 		&__link
 			&:not(:last-of-type)
-				margin-right: 108px
+				margin-right: 9vw
 
 	.title
 		top: 6vw
@@ -1038,6 +1064,12 @@ html, body
 			top: 32vw
 			left: 40.5%
 
+	.button-square
+		top: 37.5vw
+		left: 50%
+		width: 18.8vw
+		height: 6.3vw
+
 	.ellips
 		width: 22%
 		top: 4vw
@@ -1046,8 +1078,8 @@ html, body
 	.text
 		width: 35%
 		top: 20vw
-		left: 52.7%
-		font-size: 24px
+		left: 50.7%
+		font-size: 20px
 		line-height: 28px
 		&--1
 			width: 35%
@@ -1089,7 +1121,7 @@ html, body
 			font-size: 20px
 
 	.time
-		top: 1.2vw
+		top: 1.5vw
 		left: 32.2vw
 
 	.share
@@ -1133,7 +1165,8 @@ html, body
 			left: 95%
 
 	.gift
-		width: 372px
+		right: 3%
+		bottom: 13%
 		&__text
 			font-size: 16px
 		&__button
@@ -1188,18 +1221,16 @@ html, body
 			width: 19%
 
 	.text
-		top: 19vw
-		font-size: 20px
-		line-height: 24px
 		&--1
-			top: 25.5vw
-			left: 51.7%
-			width: 39%
-			font-size: 19px
-			line-height: 20px
+			// top: 25.5vw
+			// left: 51.7%
+			// width: 39%
+			// font-size: 19px
+			// line-height: 20px
 
 	.button
 		top: 30vw
+		left: 81.5%
 
 	.video
 		height: 37.4vw
@@ -1214,7 +1245,8 @@ html, body
 
 @media only screen and (max-width : 1279px)
 	.text
-		top: 18vw
+		font-size: 1.5vw
+		line-height: 1.3
 		&--1
 			top: 26vw
 			font-size: 20px
@@ -1229,6 +1261,9 @@ html, body
 			width: 240px
 			top: 36vw
 			left: 38%
+
+	.button-square
+		font-size: 20px
 
 	.more
 		&__star
@@ -1297,7 +1332,7 @@ html, body
 			top: 9%
 		&--3
 			top: 31vw
-			left: 11.7%
+			left: 11.9%
 			width: 32%
 
 	.button
@@ -1325,10 +1360,12 @@ html, body
 
 	.text
 		top: 26vw
-		font-size: 20px
-		line-height: 25px
+		font-size: 16px
+		line-height: 20px
 		&--1
 			top: 33vw
+			font-size: 22px
+			line-height: 26px
 
 	.more
 		&__star
@@ -1396,11 +1433,12 @@ html, body
 			
 	.slide
 		&::before
-			padding-top: 142%
+			// padding-top: 142%
+			padding-top: 160%
 		&__logo
 			width: 9%
 			bottom: auto
-			top: 99vw
+			top: 125vw
 			left: 4%
 
 	.top-line
@@ -1419,20 +1457,20 @@ html, body
 
 	.text
 		top: 74vw
-		left: 11.7%
-		width: 75%
-		font-size: 3.5vw
+		left: 11%
+		width: 77%
+		font-size: 4vw
 		line-height: 1.4
 
 	.cube
 		&--1
-			top: 28vw
-			left: 50%
-			width: 45%
+			top: 36vw
+			left: 56%
+			width: 33%
 		&--2
-			top: 105vw
+			top: 127vw
 			left: 19%
-			width: 27%
+			width: 16%
 
 	.ellips
 		top: 8vw
@@ -1454,10 +1492,16 @@ html, body
 			width: 9%
 
 	.button
-		width: 34%
-		top: 105vw
-		left: 55.5%
+		width: 35%
+		top: 121vw
+		left: 53.5%
 
+	.button-square
+		top: 34.9vw
+		left: 40%
+		width: 15vw
+		height: 5vw
+		font-size: 16px
 	
 		
 
@@ -1699,7 +1743,7 @@ html, body
 @media only screen and (max-width : 768px) and (min-width : 768px)
 	.slide
 		&::before
-			padding-top: 1024px
+			padding-top: 160%
 		&--landscape
 			&::before
 				padding-top: 56%
@@ -1707,7 +1751,7 @@ html, body
 @media only screen and (max-width : 1023px) and (min-width : 768px)
 	.slide
 		&__logo
-			top: 109vw
+			// top: 109vw
 			&--landscape
 				width: 5%
 				top: 35vw
@@ -1715,7 +1759,7 @@ html, body
 
 	.cube
 		&--2
-			top: 101vw
+			// top: 101vw
 
 	.text
 		// top: 88vw
@@ -1724,7 +1768,7 @@ html, body
 
 
 	.button
-		top: 97vw
+		// top: 97vw
 		&--1
 			width: 20%
 			top: 28vw
