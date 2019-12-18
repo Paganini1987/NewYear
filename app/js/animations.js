@@ -227,12 +227,12 @@ slide3
 			from: "center"
 		}
 	},0)
-	.from('[data-slide="3"] .button', 1, {
-		scale: 0.5, 
-		opacity: 0, 
-		ease: "elastic", 
-		force3D: true
-	})
+	// .from('[data-slide="3"] .button-square', 1, {
+	// 	scale: 0.5, 
+	// 	opacity: 0, 
+	// 	ease: "elastic", 
+	// 	force3D: true
+	// })
 	.from('[data-slide="3"] .slide__logo', 0.3, {
 		x: -50,
 		opacity: 0,

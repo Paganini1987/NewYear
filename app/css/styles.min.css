@@ -1182,7 +1182,7 @@ html, body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url(/img/@2x/video.png);
+  background-image: url(/img/@2x/zaglushka-1.jpg);
   background-repeat: no-repeat;
   background-position: 50%;
   background-size: cover;
@@ -1443,6 +1443,10 @@ html, body {
   transition: 0.5s;
 }
 
+.wrapper--help {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
 .wrapper__center {
   position: absolute;
   left: 50%;
@@ -1692,6 +1696,20 @@ html, body {
   opacity: 1;
 }
 
+.slide.showHelp .slide__logo path {
+  fill: #ddd;
+}
+
+.slide.showHelp .overlay {
+  visibility: visible;
+  opacity: 1;
+}
+
+.slide.showHelp .wrapper--help {
+  visibility: visible;
+  opacity: 1;
+}
+
 .rotate {
   position: relative;
 }
@@ -1717,6 +1735,105 @@ html, body {
 
 .rotate__text span {
   color: #FC3F27;
+}
+
+.placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+  max-height: 100vh;
+  font-family: Formular;
+}
+
+.placeholder__composition {
+  padding: 15px;
+  max-width: 514px;
+}
+
+.placeholder__img {
+  position: relative;
+  width: 199px;
+  height: 210px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+.placeholder__star, .placeholder__face {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.placeholder__star {
+  width: 100%;
+  -webkit-animation: star 29s linear infinite;
+          animation: star 29s linear infinite;
+}
+
+.placeholder__face {
+  width: 36%;
+}
+
+.placeholder__text {
+  color: #6681FF;
+  text-align: center;
+  font-size: 21px;
+  line-height: 32px;
+}
+
+.placeholder__title {
+  color: #fff;
+  text-align: center;
+  font-size: 30px;
+  line-height: 40px;
+}
+
+.instruction {
+  position: relative;
+  font-family: Formular;
+  font-size: 22px;
+  line-height: 27px;
+  color: #fff;
+}
+
+.instruction__top {
+  position: absolute;
+  display: block;
+  top: -60%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.instruction__text {
+  max-width: 492px;
+  text-align: center;
+}
+
+.instruction__right {
+  position: absolute;
+  display: block;
+  left: 50%;
+  bottom: -45%;
 }
 
 @media only screen and (min-width: 1920px) {
@@ -2206,6 +2323,22 @@ html, body {
   .standart__text {
     width: 50%;
   }
+  .instruction {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  .instruction__top {
+    top: -40px;
+    height: 4vw;
+  }
+  .instruction__text {
+    max-width: 350px;
+  }
+  .instruction__right {
+    left: 50%;
+    bottom: -45%;
+    width: 20vw;
+  }
 }
 
 @media only screen and (max-width: 1024px) {
@@ -2429,6 +2562,28 @@ html, body {
     width: 15vw;
     height: 5vw;
     font-size: 16px;
+  }
+  .placeholder__composition {
+    padding: 15px;
+    max-width: 400px;
+  }
+  .placeholder__img {
+    position: relative;
+    width: 140px;
+    height: 160px;
+    margin-bottom: 0px;
+  }
+  .placeholder__star {
+    -webkit-animation: star 29s linear infinite;
+            animation: star 29s linear infinite;
+  }
+  .placeholder__text {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .placeholder__title {
+    font-size: 20px;
+    line-height: 30px;
   }
 }
 
