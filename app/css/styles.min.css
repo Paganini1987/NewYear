@@ -1813,6 +1813,16 @@ html, body {
   color: #fff;
 }
 
+.instruction__box {
+  position: absolute;
+  display: block;
+  top: -130%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
 .instruction__top {
   position: absolute;
   display: block;
@@ -2325,6 +2335,10 @@ html, body {
   .instruction {
     font-size: 18px;
     line-height: 22px;
+  }
+  .instruction__box {
+    width: 4vw;
+    top: -100px;
   }
   .instruction__top {
     top: -40px;
