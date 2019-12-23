@@ -1153,6 +1153,7 @@ html, body {
   height: 700px;
   -webkit-clip-path: polygon(0px 0px, 0px 500px, 200px 500px, 200px 700px, 1300px 700px, 1300px 200px, 1200px 200px, 1200px 0px);
           clip-path: polygon(0px 0px, 0px 500px, 200px 500px, 200px 700px, 1300px 700px, 1300px 200px, 1200px 200px, 1200px 0px);
+  overflow: hidden;
   z-index: 10;
 }
 
@@ -1172,6 +1173,18 @@ html, body {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.video__frame {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 105%;
+  height: 110%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .video__preview {
@@ -1886,6 +1899,10 @@ html, body {
     -webkit-clip-path: polygon(0px 0px, 0px 600px, 200px 600px, 200px 900px, 1700px 900px, 1700px 200px, 1400px 200px, 1400px 0px);
             clip-path: polygon(0px 0px, 0px 600px, 200px 600px, 200px 900px, 1700px 900px, 1700px 200px, 1400px 200px, 1400px 0px);
   }
+  .video__frame {
+    width: 105%;
+    height: 110%;
+  }
   .top-line--video {
     top: 36.5%;
   }
@@ -2110,6 +2127,10 @@ html, body {
     -webkit-clip-path: polygon(0% 0%, 0% 71.5%, 15.5% 71.5%, 15.5% 100%, 100% 100%, 100% 28%, 92.5% 28%, 92.5% 0%);
             clip-path: polygon(0% 0%, 0% 71.5%, 15.5% 71.5%, 15.5% 100%, 100% 100%, 100% 28%, 92.5% 28%, 92.5% 0%);
   }
+  .video__frame {
+    width: 105%;
+    height: 115%;
+  }
   .help {
     font-size: 14px;
     top: 46.3vw;
@@ -2264,6 +2285,11 @@ html, body {
     height: 37.4vw;
     -webkit-clip-path: polygon(0% 0%, 0% 66.5%, 15.5% 66.5%, 15.5% 100%, 100% 100%, 100% 33%, 92.5% 33%, 92.5% 0%);
             clip-path: polygon(0% 0%, 0% 66.5%, 15.5% 66.5%, 15.5% 100%, 100% 100%, 100% 33%, 92.5% 33%, 92.5% 0%);
+  }
+  .video__frame {
+    width: 100%;
+    height: 120%;
+    top: 44%;
   }
   .help {
     top: 46.3vw;
@@ -2452,6 +2478,10 @@ html, body {
     height: 49.9vw;
     -webkit-clip-path: polygon(0 0, 0 74.9%, 15.5% 74.9%, 15.5% 100%, 100% 100%, 100% 12%, 92.5% 12%, 92.5% 0%);
             clip-path: polygon(0 0, 0 74.9%, 15.5% 74.9%, 15.5% 100%, 100% 100%, 100% 12%, 92.5% 12%, 92.5% 0%);
+  }
+  .video__frame {
+    width: 120%;
+    height: 120%;
   }
   .help {
     top: 64.3vw;
@@ -2711,6 +2741,11 @@ html, body {
     height: 44.9vw;
     -webkit-clip-path: polygon(0 0, 0 77.9%, 11.5% 77.9%, 11.5% 100%, 100% 100%, 100% 22%, 94% 22%, 94% 0%);
             clip-path: polygon(0 0, 0 77.9%, 11.5% 77.9%, 11.5% 100%, 100% 100%, 100% 22%, 94% 22%, 94% 0%);
+  }
+  .video__frame {
+    width: 103%;
+    height: 140%;
+    top: 43%;
   }
   .help {
     top: 50.3vw;
