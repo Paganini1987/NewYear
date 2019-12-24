@@ -1194,7 +1194,6 @@ html, body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url(/img/@2x/zaglushka-1.jpg);
   background-repeat: no-repeat;
   background-position: 50%;
   background-size: cover;
@@ -1455,8 +1454,10 @@ html, body {
   transition: 0.5s;
 }
 
-.wrapper--help {
-  background-color: rgba(0, 0, 0, 0.6);
+.wrapper--over {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(30, 87, 153, 0)), to(rgba(0, 0, 0, 0.4)));
+  background: -o-linear-gradient(top, rgba(30, 87, 153, 0) 0%, rgba(0, 0, 0, 0.4) 100%);
+  background: linear-gradient(to bottom, rgba(30, 87, 153, 0) 0%, rgba(0, 0, 0, 0.4) 100%);
 }
 
 .wrapper__center {
@@ -1583,15 +1584,6 @@ html, body {
   display: inline-block;
 }
 
-.slide.showOverlay .slide__logo path {
-  fill: #ddd;
-}
-
-.slide.showOverlay .overlay {
-  visibility: visible;
-  opacity: 1;
-}
-
 .slide.showOverlay .wrapper--counter {
   visibility: visible;
   opacity: 1;
@@ -1599,15 +1591,6 @@ html, body {
 
 .slide.showOverlay .button--1 {
   display: none;
-}
-
-.slide.showOverlayStranger .slide__logo path {
-  fill: #ddd;
-}
-
-.slide.showOverlayStranger .overlay {
-  visibility: visible;
-  opacity: 1;
 }
 
 .slide.showOverlayStranger .wrapper--stranger {
@@ -1643,15 +1626,6 @@ html, body {
   display: none;
 }
 
-.slide.showWantGift .slide__logo path {
-  fill: #ddd;
-}
-
-.slide.showWantGift .overlay {
-  visibility: visible;
-  opacity: 1;
-}
-
 .slide.showWantGift .wrapper--gift {
   visibility: visible;
   opacity: 1;
@@ -1671,15 +1645,6 @@ html, body {
 
 .slide.showWantGift .help {
   display: none;
-}
-
-.slide.showTimeOver .slide__logo path {
-  fill: #ddd;
-}
-
-.slide.showTimeOver .overlay {
-  visibility: visible;
-  opacity: 1;
 }
 
 .slide.showTimeOver .wrapper--over {
@@ -1704,15 +1669,6 @@ html, body {
 }
 
 .slide.showPreview .video__preview {
-  visibility: visible;
-  opacity: 1;
-}
-
-.slide.showHelp .slide__logo path {
-  fill: #ddd;
-}
-
-.slide.showHelp .overlay {
   visibility: visible;
   opacity: 1;
 }
